@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+
 import './App.css';
 
-function App() {
+const Brekkie = () => {
+    return (
+        <Stack spacing={1} sx={{marginRight: '10px' }}>
+            <Box sx={{fontSize: '1.5em'}}>brekkie</Box>
+            <Box>oatmeal</Box>
+        </Stack>
+    );
+}
+
+const Dunch = () => {
+    return (
+        <Stack spacing={1}>
+            <Box sx={{fontSize: '1.5em' }}>dunch</Box>
+            <Box>veggie soup</Box>
+        </Stack>
+    );
+}
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Stack
+        spacing={2}
+        sx={{ textAlign: 'center', marginTop: '75px' }}>
+        <Box sx={{ fontSize: '3em' }}>recipes</Box>
+        <Stack
+            sx={{ marginTop: '10px', justifyContent: 'center' }}
+            direction="row">
+          <Brekkie />
+          <Dunch />
+        </Stack>
+    </Stack>
   );
 }
 
