@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 
 import RecipeLink from './RecipeLink.tsx';
-import Recipes from './models/recipes.ts';
+import Recipes from '../models/recipes.ts';
 
 const RecipeGroup = (props) => {
     const recipes = Recipes.filter((x) => x.category === props.category);

@@ -3,7 +3,7 @@ import React from 'react';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 
-import RecipeGroup from './RecipeGroup.tsx';
+import RecipeGroup from './components/RecipeGroup.tsx';
 import { Category } from './models/recipes.ts';
 
 const Home = () => {

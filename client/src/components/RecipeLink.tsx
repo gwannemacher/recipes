@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 
-import Recipes from './models/recipes.ts';
+import Recipes from '../models/recipes.ts';
 
 const RecipeLink = (props) => {
     const navigate = useNavigate();

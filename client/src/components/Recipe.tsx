@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 
-import Recipes from './models/recipes.ts';
+import Recipes from '../models/recipes.ts';
 
 const RecipeCheckbox = (props) => {
     const [checked, setChecked] = React.useState(false);
