@@ -50,8 +50,8 @@ const Ingredients = (props) => {
                 ingredients
             </Box>
             <Box sx={{ columnCount: 2 }}>
-                {props.ingredients?.map((ingredient) => (
-                    <RecipeCheckbox key={ingredient} label={ingredient} />
+                {props.ingredients?.map((i) => (
+                    <RecipeCheckbox key={i} label={i} />
                 ))}
             </Box>
         </Box>
@@ -70,8 +70,15 @@ const Instructions = (props) => {
             >
                 instructions
             </Box>
-            {props.instructions?.map((instruction) => (
-                <RecipeCheckbox key={instruction} label={instruction} />
+            {props.instructions?.map((i) => (
+                <Box
+                    sx={{
+                        paddingTop: i.length > 100 ? '5px' : 'unset',
+                        paddingBottom: i.length > 100 ? '5px' : 'unset',
+                    }}
+                >
+                    <RecipeCheckbox key={i} label={i} />
+                </Box>
             ))}
         </Box>
     );
@@ -130,10 +137,10 @@ const Recipe = (props) => {
                     display: 'flex',
                     justifyContent: 'center',
                     marginTop: '75px',
-                    textTransform: 'lowercase'
+                    textTransform: 'lowercase',
                 }}
             >
-                <Stack sx={{ width: '750px' }}>
+                <Stack sx={{ width: '750px', paddingBottom: '100px' }}>
                     <RecipeName recipeName={recipe.name} />
                     <Ingredients ingredients={recipe.ingredients} />
                     <Instructions instructions={recipe.instructions} />
