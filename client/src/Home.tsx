@@ -12,16 +12,16 @@ const Home = () => {
             <Box sx={{ fontSize: '3em' }}>recipes</Box>
             <Stack
                 sx={{
-                    paddingTop: '20px',
+                    paddingTop: '50px',
                     justifyContent: 'center',
                     textAlign: 'left',
                 }}
                 direction="row"
             >
-                <Stack spacing={1} sx={{ marginRight: '50px' }}>
+                <Stack spacing={1} sx={{ marginRight: '60px' }}>
                     <RecipeGroup category={Category.BREKKIE} />
                 </Stack>
-                <Stack spacing={1} sx={{ marginRight: '50px' }}>
+                <Stack spacing={1} sx={{ marginRight: '60px' }}>
                     <RecipeGroup category={Category.SOUP} />
                 </Stack>
                 <Stack spacing={1} sx={{}}>

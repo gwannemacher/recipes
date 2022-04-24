@@ -41,7 +41,7 @@ const Recipe = (props) => {
 
     const Ingredients = () => {
         return (
-            <Box sx={{ marginTop: '20px' }}>
+            <Box sx={{ marginTop: '50px' }}>
                 <Box
                     sx={{
                         fontSize: '1.5em',
