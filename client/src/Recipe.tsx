@@ -1,11 +1,11 @@
 import React from 'react';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 
-import Recipes, { Category } from './models/recipes.ts';
+import Recipes from './models/recipes.ts';
 
 const Recipe = (props) => {
     const params = useParams();

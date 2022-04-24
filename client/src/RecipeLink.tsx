@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 
@@ -28,7 +28,7 @@ const RecipeLink = (props) => {
                 '&.MuiButtonBase-root.MuiButton-root': {
                     '&:hover': {
                         backgroundColor: 'transparent',
-                        color: 'MediumPurple'
+                        color: 'MediumPurple',
                     },
                 },
             }}
