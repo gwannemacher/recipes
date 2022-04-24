@@ -17,7 +17,7 @@ const Recipe = (props) => {
             <Box sx={{ marginTop: '20px' }}>
                 <Box
                     sx={{
-                        fontSize: '1.3em',
+                        fontSize: '1.5em',
                         paddingBottom: '10px',
                         paddingTop: '5px',
                     }}
@@ -25,7 +25,11 @@ const Recipe = (props) => {
                     ingredients
                 </Box>
                 {recipe.ingredients?.map((x) => (
-                    <Stack key={x} direction="row" sx={{ alignItems: 'center' }}>
+                    <Stack
+                        key={x}
+                        direction="row"
+                        sx={{ alignItems: 'center' }}
+                    >
                         <Checkbox />
                         {x}
                     </Stack>
@@ -39,7 +43,7 @@ const Recipe = (props) => {
             <Box sx={{ marginTop: '15px' }}>
                 <Box
                     sx={{
-                        fontSize: '1.3em',
+                        fontSize: '1.5em',
                         paddingBottom: '10px',
                         paddingTop: '5px',
                     }}
@@ -47,7 +51,11 @@ const Recipe = (props) => {
                     instructions
                 </Box>
                 {recipe.instructions?.map((x) => (
-                    <Stack key={x} direction="row" sx={{ alignItems: 'center' }}>
+                    <Stack
+                        key={x}
+                        direction="row"
+                        sx={{ alignItems: 'center' }}
+                    >
                         <Checkbox />
                         {x}
                     </Stack>
@@ -61,11 +69,19 @@ const Recipe = (props) => {
             sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                marginTop: '50px',
+                marginTop: '75px',
             }}
         >
             <Stack sx={{ width: '750px' }}>
-                <Box sx={{ fontSize: '2em' }}>{recipe.name}</Box>
+                <Box
+                    sx={{
+                        fontSize: '2.5em',
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}
+                >
+                    {recipe.name}
+                </Box>
                 <Ingredients />
                 <Instructions />
             </Stack>
