@@ -8,46 +8,13 @@ import Button from '@mui/material/Button';
 import RecipeLink from './RecipeLink.tsx';
 import Recipes, { Category } from './models/recipes.ts';
 
-const Brekkie = (props) => {
-    const breakfastRecipes = Recipes.filter(x => x.category === Category.BREKKIE);
+const RecipeGroup = (props) => {
+    const recipes = Recipes.filter(x => x.category === props.category);
 
     return (
         <Stack spacing={1} sx={{}}>
-            <Box sx={{ fontSize: '1.5em' }}>brekkie</Box>
-            {breakfastRecipes.map(x => <RecipeLink recipeId={x.id} /> )}
-        </Stack>
-    );
-};
-
-const Soups = () => {
-    const soupRecipes = Recipes.filter(x => x.category === Category.SOUP);
-
-    return (
-        <Stack spacing={1}>
-            <Box sx={{ fontSize: '1.5em' }}>soups</Box>
-            {soupRecipes.map(x => <RecipeLink recipeId={x.id} /> )}
-        </Stack>
-    );
-};
-
-const Pasta = () => {
-    const pastaRecipes = Recipes.filter(x => x.category === Category.PASTA);
-
-    return (
-        <Stack spacing={1}>
-            <Box sx={{ fontSize: '1.5em' }}>pasta</Box>
-            {pastaRecipes.map(x => <RecipeLink recipeId={x.id} /> )}
-        </Stack>
-    );
-};
-
-const Other = () => {
-    const otherRecipes = Recipes.filter(x => x.category === Category.OTHER);
-
-    return (
-        <Stack spacing={1} sx={{ paddingTop: '10px' }}>
-            <Box sx={{ fontSize: '1.5em' }}>other</Box>
-            {otherRecipes.map(x => <RecipeLink recipeId={x.id} /> )}
+            <Box sx={{ fontSize: '1.5em', textTransform: 'lowercase' }}>{props.category}</Box>
+            {recipes.map(x => <RecipeLink recipeId={x.id} /> )}
         </Stack>
     );
 };
@@ -55,7 +22,7 @@ const Other = () => {
 const ColumnOne = (props) => {
     return (
         <Stack spacing={1} sx={{ marginRight: '50px' }}>
-            <Brekkie />
+            <RecipeGroup category={Category.BREKKIE} />
         </Stack>
     );
 };
@@ -63,7 +30,7 @@ const ColumnOne = (props) => {
 const ColumnTwo = (props) => {
     return (
         <Stack spacing={1} sx={{ marginRight: '50px' }}>
-            <Soups />
+            <RecipeGroup category={Category.SOUP} />
         </Stack>
     );
 };
@@ -71,8 +38,8 @@ const ColumnTwo = (props) => {
 const ColumnThree = (props) => {
     return (
         <Stack spacing={1} sx={{}}>
-            <Pasta />
-            <Other />
+            <RecipeGroup category={Category.PASTA} />
+            <RecipeGroup category={Category.OTHER} />
         </Stack>
     );
 };
