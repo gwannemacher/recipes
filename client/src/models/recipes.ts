@@ -8,6 +8,7 @@ export const Category = {
 const Recipes = [
     {
         name: 'porridge',
+        id: 'porridge',
         category: Category.BREKKIE,
         ingredients: [
             '2/3 cup rolled oats',
@@ -17,7 +18,7 @@ const Recipes = [
             'pinch ground cinnamon',
             'pinch ground nutmeg',
             '2 tablespoons hemp seeds',
-            '1 tablespoon almond butter',
+            '1 tablespoons almond butter',
             '2 teaspoons chia seeds',
             '1/2 teaspoon vanilla extract',
         ],
@@ -31,25 +32,50 @@ const Recipes = [
     },
     {
         name: 'veggie broth',
+        id: 'veggie-broth',
         category: Category.SOUP,
         ingredients: [],
         instructions: [],
     },
     {
         name: 'veggie soup',
+        id: 'veggie-soup',
         category: Category.SOUP,
         ingredients: [],
         instructions: [],
     },
     {
         name: 'chicken tortilla',
+        id: 'chicken-tortilla',
         category: Category.SOUP,
         ingredients: [],
         instructions: [],
     },
     {
         name: 'lentil soup',
+        id: 'lentil-soup',
         category: Category.SOUP,
+        ingredients: [],
+        instructions: [],
+    },
+    {
+        name: 'spinach sausage orzo',
+        id: 'spinach-sausage-orzo',
+        category: Category.SOUP,
+        ingredients: [],
+        instructions: [],
+    },
+    {
+        name: 'mushroom risotto',
+        id: 'mushroom-risotto',
+        category: Category.PASTA,
+        ingredients: [],
+        instructions: [],
+    },
+    {
+        name: 'stuffed cabbage rolls',
+        id: 'stuffed-cabbage-rolls',
+        category: Category.PASTA,
         ingredients: [],
         instructions: [],
     },

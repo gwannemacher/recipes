@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from "react-router-dom";
 
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 
 import Recipes, { Category } from './models/recipes.ts';
 
 const Recipe = (props) => {
     const params = useParams();
-    const filtered = Recipes.filter((x) => x.name === params.recipeId);
+    const filtered = Recipes.filter((x) => x.id === params.recipeId);
     const recipe = filtered.length > 0 ? filtered[0] : {};
 
     const Ingredients = () => {
@@ -25,7 +24,7 @@ const Recipe = (props) => {
                 >
                     ingredients
                 </Box>
-                {recipe.ingredients.map((x) => (
+                {recipe.ingredients?.map((x) => (
                     <Stack direction="row" sx={{ alignItems: 'center' }}>
                         <Checkbox />
                         {x}
@@ -47,7 +46,7 @@ const Recipe = (props) => {
                 >
                     instructions
                 </Box>
-                {recipe.instructions.map((x) => (
+                {recipe.instructions?.map((x) => (
                     <Stack direction="row" sx={{ alignItems: 'center' }}>
                         <Checkbox />
                         {x}
