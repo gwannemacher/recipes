@@ -25,7 +25,7 @@ const Recipe = (props) => {
                     ingredients
                 </Box>
                 {recipe.ingredients?.map((x) => (
-                    <Stack direction="row" sx={{ alignItems: 'center' }}>
+                    <Stack key={x} direction="row" sx={{ alignItems: 'center' }}>
                         <Checkbox />
                         {x}
                     </Stack>
@@ -47,7 +47,7 @@ const Recipe = (props) => {
                     instructions
                 </Box>
                 {recipe.instructions?.map((x) => (
-                    <Stack direction="row" sx={{ alignItems: 'center' }}>
+                    <Stack key={x} direction="row" sx={{ alignItems: 'center' }}>
                         <Checkbox />
                         {x}
                     </Stack>

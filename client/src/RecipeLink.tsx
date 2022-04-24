@@ -19,6 +19,7 @@ const RecipeLink = (props) => {
         <Button
             onClick={onClick}
             variant="text"
+            key={recipe.name}
             sx={{
                 textTransform: 'lowercase',
                 padding: '0px',

@@ -10,12 +10,12 @@ const RecipeGroup = (props) => {
     const recipes = Recipes.filter((x) => x.category === props.category);
 
     return (
-        <Stack spacing={1} sx={{}}>
+        <Stack spacing={1} sx={{}} key={props.category} >
             <Box sx={{ fontSize: '1.5em', textTransform: 'lowercase' }}>
                 {props.category}
             </Box>
             {recipes.map((x) => (
-                <RecipeLink recipeId={x.id} />
+                <RecipeLink key={x.id} recipeId={x.id} />
             ))}
         </Stack>
     );
