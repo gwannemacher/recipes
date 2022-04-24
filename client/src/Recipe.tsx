@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
+import Button from '@mui/material/Button';
 
 import Recipes from './models/recipes.ts';
 
@@ -34,75 +35,108 @@ const RecipeCheckbox = (props) => {
     );
 };
 
+const Ingredients = (props) => {
+    return (
+        <Box sx={{ marginTop: '50px' }}>
+            <Box
+                sx={{
+                    fontSize: '1.5em',
+                    paddingBottom: '10px',
+                    paddingTop: '5px',
+                }}
+            >
+                ingredients
+            </Box>
+            <Box sx={{ columnCount: 2 }}>
+                {props.ingredients?.map((ingredient) => (
+                    <RecipeCheckbox key={ingredient} label={ingredient} />
+                ))}
+            </Box>
+        </Box>
+    );
+};
+
+const Instructions = (props) => {
+    return (
+        <Box sx={{ marginTop: '15px' }}>
+            <Box
+                sx={{
+                    fontSize: '1.5em',
+                    paddingBottom: '10px',
+                    paddingTop: '5px',
+                }}
+            >
+                instructions
+            </Box>
+            {props.instructions?.map((instruction) => (
+                <RecipeCheckbox key={instruction} label={instruction} />
+            ))}
+        </Box>
+    );
+};
+
+const GoHomeButton = () => {
+    const navigate = useNavigate();
+
+    return (
+        <Button
+            onClick={() => navigate('/')}
+            variant="text"
+            sx={{
+                textTransform: 'lowercase',
+                padding: '5px',
+                justifyContent: 'start',
+                fontSize: 'unset',
+                lineHeight: 'unset',
+                '&.MuiButtonBase-root.MuiButton-root': {
+                    '&:hover': {
+                        backgroundColor: 'transparent',
+                        color: 'MediumPurple',
+                    },
+                },
+            }}
+        >
+            go home
+        </Button>
+    );
+};
+
+const RecipeName = (props) => {
+    return (
+        <Box
+            sx={{
+                fontSize: '2.5em',
+                display: 'flex',
+                justifyContent: 'center',
+            }}
+        >
+            {props.recipeName}
+        </Box>
+    );
+};
+
 const Recipe = (props) => {
     const params = useParams();
     const filtered = Recipes.filter((x) => x.id === params.recipeId);
     const recipe = filtered.length > 0 ? filtered[0] : {};
 
-    const Ingredients = () => {
-        return (
-            <Box sx={{ marginTop: '50px' }}>
-                <Box
-                    sx={{
-                        fontSize: '1.5em',
-                        paddingBottom: '10px',
-                        paddingTop: '5px',
-                    }}
-                >
-                    ingredients
-                </Box>
-                <Box sx={{ columnCount: 2 }}>
-                    {recipe.ingredients?.map((x) => (
-                        <RecipeCheckbox key={x} label={x} />
-                    ))}
-                </Box>
-            </Box>
-        );
-    };
-
-    const Instructions = () => {
-        return (
-            <Box sx={{ marginTop: '15px' }}>
-                <Box
-                    sx={{
-                        fontSize: '1.5em',
-                        paddingBottom: '10px',
-                        paddingTop: '5px',
-                    }}
-                >
-                    instructions
-                </Box>
-                {recipe.instructions?.map((x) => (
-                    <Stack key={x}>
-                        <RecipeCheckbox label={x} />
-                    </Stack>
-                ))}
-            </Box>
-        );
-    };
-
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                marginTop: '75px',
-            }}
-        >
-            <Stack sx={{ width: '750px' }}>
-                <Box
-                    sx={{
-                        fontSize: '2.5em',
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }}
-                >
-                    {recipe.name}
-                </Box>
-                <Ingredients />
-                <Instructions />
-            </Stack>
-        </Box>
+        <>
+            <GoHomeButton />
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    marginTop: '75px',
+                }}
+            >
+                <Stack sx={{ width: '750px' }}>
+                    <RecipeName recipeName={recipe.name} />
+                    <Ingredients ingredients={recipe.ingredients} />
+                    <Instructions instructions={recipe.instructions} />
+                </Stack>
+            </Box>
+        </>
     );
 };
 

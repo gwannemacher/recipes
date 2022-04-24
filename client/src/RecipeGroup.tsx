@@ -10,7 +10,7 @@ const RecipeGroup = (props) => {
     const recipes = Recipes.filter((x) => x.category === props.category);
 
     return (
-        <Stack spacing={1} sx={{}} key={props.category}>
+        <Stack spacing={1} sx={{ paddingBottom: '10px' }} key={props.category}>
             <Box sx={{ fontSize: '1.5em', textTransform: 'lowercase' }}>
                 {props.category}
             </Box>
