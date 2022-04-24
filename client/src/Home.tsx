@@ -19,31 +19,6 @@ const RecipeGroup = (props) => {
     );
 };
 
-const ColumnOne = (props) => {
-    return (
-        <Stack spacing={1} sx={{ marginRight: '50px' }}>
-            <RecipeGroup category={Category.BREKKIE} />
-        </Stack>
-    );
-};
-
-const ColumnTwo = (props) => {
-    return (
-        <Stack spacing={1} sx={{ marginRight: '50px' }}>
-            <RecipeGroup category={Category.SOUP} />
-        </Stack>
-    );
-};
-
-const ColumnThree = (props) => {
-    return (
-        <Stack spacing={1} sx={{}}>
-            <RecipeGroup category={Category.PASTA} />
-            <RecipeGroup category={Category.OTHER} />
-        </Stack>
-    );
-};
-
 const Home = () => {
     return (
         <Stack
@@ -59,9 +34,16 @@ const Home = () => {
                 }}
                 direction="row"
             >
-                <ColumnOne />
-                <ColumnTwo />
-                <ColumnThree />
+                <Stack spacing={1} sx={{ marginRight: '50px' }}>
+                    <RecipeGroup category={Category.BREKKIE} />
+                </Stack>
+                <Stack spacing={1} sx={{ marginRight: '50px' }}>
+                    <RecipeGroup category={Category.SOUP} />
+                </Stack>
+                <Stack spacing={1} sx={{}}>
+                    <RecipeGroup category={Category.PASTA} />
+                    <RecipeGroup category={Category.OTHER} />
+                </Stack>
             </Stack>
         </Stack>
     );
