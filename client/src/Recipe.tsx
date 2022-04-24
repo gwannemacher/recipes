@@ -130,6 +130,7 @@ const Recipe = (props) => {
                     display: 'flex',
                     justifyContent: 'center',
                     marginTop: '75px',
+                    textTransform: 'lowercase'
                 }}
             >
                 <Stack sx={{ width: '750px' }}>

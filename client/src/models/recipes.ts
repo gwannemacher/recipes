@@ -45,7 +45,10 @@ const Recipes = [
             '3 tablespoons tamari',
             '1/2 teaspoon ground turmeric',
         ],
-        instructions: [],
+        instructions: [
+            'Place in a large stockpot and simmer on low for at least 2 hours, stirring occasionally.',
+            'Let cool, then strain through a fine-mesh strainer.',
+        ],
     },
     {
         name: 'veggie soup',
