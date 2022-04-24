@@ -6,42 +6,48 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 import RecipeLink from './RecipeLink.tsx';
+import Recipes, { Category } from './models/recipes.ts';
 
 const Brekkie = (props) => {
+    const breakfastRecipes = Recipes.filter(x => x.category === Category.BREKKIE);
+
     return (
         <Stack spacing={1} sx={{}}>
             <Box sx={{ fontSize: '1.5em' }}>brekkie</Box>
-            <RecipeLink recipeId={'porridge'} />
+            {breakfastRecipes.map(x => <RecipeLink recipeId={x.id} /> )}
         </Stack>
     );
 };
 
 const Soups = () => {
+    const soupRecipes = Recipes.filter(x => x.category === Category.SOUP);
+
     return (
         <Stack spacing={1}>
             <Box sx={{ fontSize: '1.5em' }}>soups</Box>
-            <RecipeLink recipeId={'veggie-broth'} />
-            <RecipeLink recipeId={'veggie-soup'} />
-            <RecipeLink recipeId={'chicken-tortilla'} />
-            <RecipeLink recipeId={'lentil-soup'} />
+            {soupRecipes.map(x => <RecipeLink recipeId={x.id} /> )}
         </Stack>
     );
 };
 
 const Pasta = () => {
+    const pastaRecipes = Recipes.filter(x => x.category === Category.PASTA);
+
     return (
         <Stack spacing={1}>
             <Box sx={{ fontSize: '1.5em' }}>pasta</Box>
-            <RecipeLink recipeId={'mushroom-risotto'} />
+            {pastaRecipes.map(x => <RecipeLink recipeId={x.id} /> )}
         </Stack>
     );
 };
 
 const Other = () => {
+    const otherRecipes = Recipes.filter(x => x.category === Category.OTHER);
+
     return (
         <Stack spacing={1} sx={{ paddingTop: '10px' }}>
             <Box sx={{ fontSize: '1.5em' }}>other</Box>
-            <RecipeLink recipeId={'stuffed-cabbage-rolls'} />
+            {otherRecipes.map(x => <RecipeLink recipeId={x.id} /> )}
         </Stack>
     );
 };

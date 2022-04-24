@@ -75,7 +75,7 @@ const Recipes = [
     {
         name: 'stuffed cabbage rolls',
         id: 'stuffed-cabbage-rolls',
-        category: Category.PASTA,
+        category: Category.OTHER,
         ingredients: [],
         instructions: [],
     },
