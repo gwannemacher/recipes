@@ -19,7 +19,7 @@ const Home = () => {
                 direction="row"
             >
                 <Stack spacing={1} sx={{ marginRight: '60px' }}>
-                    <RecipeGroup category={Category.BREKKIE} />
+                    <RecipeGroup category={Category.BREAKFAST} />
                 </Stack>
                 <Stack spacing={1} sx={{ marginRight: '60px' }}>
                     <RecipeGroup category={Category.SOUP} />
