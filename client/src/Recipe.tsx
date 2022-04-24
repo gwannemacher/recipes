@@ -15,7 +15,8 @@ const RecipeCheckbox = (props) => {
     };
 
     return (
-        <Box
+        <Stack
+            direction="row"
             onClick={() => setChecked(!checked)}
             sx={{
                 color: checked ? 'gray' : 'unset',
@@ -26,8 +27,10 @@ const RecipeCheckbox = (props) => {
             }}
         >
             <Checkbox checked={checked} onChange={handleChange} />
-            {props.label}
-        </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                {props.label}
+            </Box>
+        </Stack>
     );
 };
 
@@ -48,15 +51,11 @@ const Recipe = (props) => {
                 >
                     ingredients
                 </Box>
-                {recipe.ingredients?.map((x) => (
-                    <Stack
-                        key={x}
-                        direction="row"
-                        sx={{ alignItems: 'center' }}
-                    >
-                        <RecipeCheckbox label={x} />
-                    </Stack>
-                ))}
+                <Box sx={{ columnCount: 2 }}>
+                    {recipe.ingredients?.map((x) => (
+                        <RecipeCheckbox key={x} label={x} />
+                    ))}
+                </Box>
             </Box>
         );
     };
@@ -74,11 +73,7 @@ const Recipe = (props) => {
                     instructions
                 </Box>
                 {recipe.instructions?.map((x) => (
-                    <Stack
-                        key={x}
-                        direction="row"
-                        sx={{ alignItems: 'center' }}
-                    >
+                    <Stack key={x}>
                         <RecipeCheckbox label={x} />
                     </Stack>
                 ))}
