@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Stack from '@mui/material/Stack';
@@ -6,6 +6,30 @@ import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 
 import Recipes from './models/recipes.ts';
+
+const RecipeCheckbox = (props) => {
+    const [checked, setChecked] = React.useState(false);
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setChecked(event.target.checked);
+    };
+
+    return (
+        <Box
+            onClick={() => setChecked(!checked)}
+            sx={{
+                color: checked ? 'gray' : 'unset',
+                fontStyle: checked ? 'italic' : 'unset',
+                '&:hover': {
+                    cursor: 'pointer',
+                },
+            }}
+        >
+            <Checkbox checked={checked} onChange={handleChange} />
+            {props.label}
+        </Box>
+    );
+};
 
 const Recipe = (props) => {
     const params = useParams();
@@ -30,8 +54,7 @@ const Recipe = (props) => {
                         direction="row"
                         sx={{ alignItems: 'center' }}
                     >
-                        <Checkbox />
-                        {x}
+                        <RecipeCheckbox label={x} />
                     </Stack>
                 ))}
             </Box>
@@ -56,8 +79,7 @@ const Recipe = (props) => {
                         direction="row"
                         sx={{ alignItems: 'center' }}
                     >
-                        <Checkbox />
-                        {x}
+                        <RecipeCheckbox label={x} />
                     </Stack>
                 ))}
             </Box>

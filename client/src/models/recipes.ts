@@ -11,7 +11,7 @@ const Recipes = [
         id: 'porridge',
         category: Category.BREKKIE,
         ingredients: [
-            '2/3 cup steel cut oats oats',
+            '2/3 cup steel cut oats',
             '2/3 cup unsweetened almond milk',
             '2 tablespoons raw pepitas, roughly chopped',
             'pinch ground ginger',
