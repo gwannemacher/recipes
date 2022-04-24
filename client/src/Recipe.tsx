@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import Stack from '@mui/material/Stack';
@@ -72,6 +72,7 @@ const Instructions = (props) => {
             </Box>
             {props.instructions?.map((i) => (
                 <Box
+                    key={i}
                     sx={{
                         paddingTop: i.length > 100 ? '5px' : 'unset',
                         paddingBottom: i.length > 100 ? '5px' : 'unset',
@@ -93,7 +94,7 @@ const GoHomeButton = () => {
             variant="text"
             sx={{
                 textTransform: 'lowercase',
-                padding: '5px',
+                padding: '10px',
                 justifyContent: 'start',
                 fontSize: 'unset',
                 lineHeight: 'unset',
