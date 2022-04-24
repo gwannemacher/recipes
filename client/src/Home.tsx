@@ -15,6 +15,17 @@ const Brekkie = (props) => {
                 <Button
                     onClick={() => props.setRecipe('porridge')}
                     variant="text"
+                    sx={{
+                        textTransform: 'lowercase',
+                        padding: '0px',
+                        justifyContent: 'start',
+                        '&.MuiButtonBase-root.MuiButton-root': {
+                            '&:hover': {
+                                backgroundColor: 'transparent',
+                                color: 'MediumPurple'
+                            },
+                        },
+                    }}
                 >
                     porridge
                 </Button>
