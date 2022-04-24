@@ -16,22 +16,24 @@ const RecipeCheckbox = (props) => {
     };
 
     return (
-        <Stack
-            direction="row"
-            onClick={() => setChecked(!checked)}
-            sx={{
-                color: checked ? 'gray' : 'unset',
-                fontStyle: checked ? 'italic' : 'unset',
-                '&:hover': {
-                    cursor: 'pointer',
-                },
-            }}
-        >
-            <Checkbox checked={checked} onChange={handleChange} />
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                {props.label}
-            </Box>
-        </Stack>
+        <Box sx={{ display: 'inline-block', width: '100%' }}>
+            <Stack
+                direction="row"
+                onClick={() => setChecked(!checked)}
+                sx={{
+                    color: checked ? 'gray' : 'unset',
+                    fontStyle: checked ? 'italic' : 'unset',
+                    '&:hover': {
+                        cursor: 'pointer',
+                    },
+                }}
+            >
+                <Checkbox checked={checked} onChange={handleChange} />
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    {props.label}
+                </Box>
+            </Stack>
+        </Box>
     );
 };
 

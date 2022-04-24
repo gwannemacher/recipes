@@ -34,7 +34,17 @@ const Recipes = [
         name: 'veggie broth',
         id: 'veggie-broth',
         category: Category.SOUP,
-        ingredients: [],
+        ingredients: [
+            '2 large piece dried kombu',
+            '1 cup chopped carrots',
+            '1 cup chopped celery',
+            'couple dried mushrooms',
+            '1 inch piece fresh ginger, sliced',
+            '2 tablespoons nutritional yeast',
+            '2 tablespoons olive oil',
+            '3 tablespoons tamari',
+            '1/2 teaspoon ground turmeric',
+        ],
         instructions: [],
     },
     {
