@@ -11,7 +11,7 @@ const RecipeGroup = (props) => {
 
     return (
         <Stack spacing={1} sx={{ paddingBottom: '10px' }} key={props.category}>
-            <Box sx={{ fontSize: '1.5em', textTransform: 'lowercase' }}>
+            <Box sx={{ fontSize: '1.75em', textTransform: 'lowercase' }}>
                 {props.category}
             </Box>
             {recipes.map((x) => (

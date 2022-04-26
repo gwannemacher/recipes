@@ -42,7 +42,7 @@ const Ingredients = (props) => {
         <Box sx={{ marginTop: '50px' }}>
             <Box
                 sx={{
-                    fontSize: '1.5em',
+                    fontSize: '1.75em',
                     paddingBottom: '10px',
                     paddingTop: '5px',
                 }}
@@ -63,7 +63,7 @@ const Instructions = (props) => {
         <Box sx={{ marginTop: '15px' }}>
             <Box
                 sx={{
-                    fontSize: '1.5em',
+                    fontSize: '1.75em',
                     paddingBottom: '10px',
                     paddingTop: '5px',
                 }}
@@ -115,7 +115,7 @@ const RecipeName = (props) => {
     return (
         <Box
             sx={{
-                fontSize: '2.5em',
+                fontSize: '3em',
                 display: 'flex',
                 justifyContent: 'center',
             }}
@@ -137,7 +137,7 @@ const Recipe = (props) => {
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
-                    marginTop: '75px',
+                    marginTop: '65px',
                     textTransform: 'lowercase',
                 }}
             >

@@ -9,7 +9,7 @@ import { Category } from './models/recipes.ts';
 const Home = () => {
     return (
         <Stack spacing={2} sx={{ textAlign: 'center', marginTop: '75px' }}>
-            <Box sx={{ fontSize: '3em' }}>recipes</Box>
+            <Box sx={{ fontSize: '3.5em' }}>recipes</Box>
             <Stack
                 sx={{
                     paddingTop: '50px',
