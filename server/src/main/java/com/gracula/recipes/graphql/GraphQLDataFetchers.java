@@ -1,10 +1,8 @@
 package com.gracula.recipes.graphql;
 
 import com.gracula.recipes.data.MongoDbClient;
-import com.gracula.recipes.models.TimeBlock;
-import com.mongodb.client.model.Updates;
+import com.gracula.recipes.models.Recipe;
 import graphql.schema.DataFetcher;
-import org.bson.conversions.Bson;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -21,72 +19,12 @@ public class GraphQLDataFetchers {
         mongoClient = client;
     }
 
-    private List<TimeBlock> getTimeBlocksFromDb() {
-        return StreamSupport.stream(mongoClient.timeBlockCollection.find().spliterator(), false)
+    private List<Recipe> getRecipesFromDb() {
+        return StreamSupport.stream(mongoClient.recipeCollection.find().spliterator(), false)
                 .collect(Collectors.toList());
     }
 
-    public DataFetcher getTimeBlocksDataFetcher() {
-        return dataFetchingEnvironment -> getTimeBlocksFromDb();
-    }
-
-    public DataFetcher<TimeBlock> createTimeBlock() {
-        return env -> {
-            final TimeBlock block = new TimeBlock();
-            block.setId(java.util.UUID.randomUUID().toString());
-            block.setTitle(env.getArgument("title"));
-            block.setType(env.getArgument("type"));
-            block.setStartTime(env.getArgument("startTime"));
-            block.setStartDate(env.getArgument("startDate"));
-            block.setEndTime(env.getArgument("endTime"));
-            block.setEndDate(env.getArgument("endDate"));
-            block.setAllDay(env.getArgument("isAllDay"));
-
-            mongoClient.timeBlockCollection.insertOne(block);
-
-            return block;
-        };
-    }
-
-    public DataFetcher deleteTimeBlockDataFetcher() {
-        return env -> {
-            final String id = env.getArgument("id");
-            mongoClient.timeBlockCollection.deleteOne(eq("_id", id));
-            return id;
-        };
-    }
-
-    public DataFetcher<TimeBlock> updateTimeBlockTitle() {
-        return env -> {
-            final String id = env.getArgument("id");
-            final String title = env.getArgument("title");
-            final Bson updates = Updates.combine(
-                    Updates.set("title", title)
-            );
-            mongoClient.timeBlockCollection.findOneAndUpdate(eq("_id", id), updates);
-            TimeBlock newBlock = mongoClient.timeBlockCollection.find(
-                    eq("_id", id)).first();
-            return newBlock;
-        };
-    }
-
-    public DataFetcher<TimeBlock> updateTimeBlockTimes() {
-        return env -> {
-            final String id = env.getArgument("id");
-            final String startTime = env.getArgument("startTime");
-            final String startDate = env.getArgument("startDate");
-            final String endTime = env.getArgument("endTime");
-            final String endDate = env.getArgument("endDate");
-            final Bson updates = Updates.combine(
-                    Updates.set("startTime", startTime),
-                    Updates.set("startDate", startDate),
-                    Updates.set("endTime", endTime),
-                    Updates.set("endDate", endDate)
-            );
-            mongoClient.timeBlockCollection.findOneAndUpdate(eq("_id", id), updates);
-            TimeBlock newBlock = mongoClient.timeBlockCollection.find(
-                    eq("_id", id)).first();
-            return newBlock;
-        };
+    public DataFetcher getRecipesDataFetcher() {
+        return dataFetchingEnvironment -> getRecipesFromDb();
     }
 }

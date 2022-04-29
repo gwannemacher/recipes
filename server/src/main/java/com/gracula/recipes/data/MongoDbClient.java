@@ -1,5 +1,6 @@
 package com.gracula.recipes.data;
 
+import com.gracula.recipes.models.Recipe;
 import com.gracula.recipes.models.TimeBlock;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -19,9 +20,9 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 @Component
 @PropertySource("classpath:application.properties")
 public class MongoDbClient {
-    public final MongoCollection<TimeBlock> timeBlockCollection;
+    public final MongoCollection<Recipe> recipeCollection;
 
-    public MongoDbClient(@Value("${mongodb.collection.time_block.name}") String timeBlockCollectionName) {
+    public MongoDbClient() {
 
         final String mongoDbUrl = String.format(
                 "mongodb+srv://%s:%s@%s.%s.mongodb.net/%s?retryWrites=true&w=majority",
@@ -40,6 +41,6 @@ public class MongoDbClient {
                 .getDatabase(System.getenv("MONGO_DB_NAME"))
                 .withCodecRegistry(pojoCodecRegistry);
 
-        timeBlockCollection = database.getCollection(timeBlockCollectionName, TimeBlock.class);
+        recipeCollection = database.getCollection("recipes", Recipe.class);
     }
 }
