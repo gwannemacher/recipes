@@ -1,7 +1,6 @@
 package com.gracula.recipes.data;
 
 import com.gracula.recipes.models.Recipe;
-import com.gracula.recipes.models.TimeBlock;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -9,7 +8,6 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.codecs.configuration.CodecProvider;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
