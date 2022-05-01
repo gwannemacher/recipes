@@ -1,12 +1,18 @@
 import React from 'react';
 
+import { useQuery, useApolloClient } from '@apollo/client';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 
 import RecipeGroup from './components/RecipeGroup.tsx';
 import { Category } from './models/recipes.ts';
+import { RECIPES_QUERY } from './queries.ts';
 
 const Home = () => {
+    const client = useApolloClient();
+    const { loading, data } = useQuery(RECIPES_QUERY);
+    const recipes = data?.getRecipes;
+
     return (
         <Stack spacing={2} sx={{ textAlign: 'center', marginTop: '75px' }}>
             <Box sx={{ fontSize: '3.5em' }}>recipes</Box>
