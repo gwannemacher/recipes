@@ -4,7 +4,7 @@ type Query {
 
 type Recipe {
     id: String
-    title: String
+    name: String
     category: String
     ingredients: [String]
     instructions: [String]

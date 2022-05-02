@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Recipe {
     private String id;
-    private String title;
+    private String name;
     private String category;
     private List<String> ingredients;
     private List<String> instructions;
@@ -17,12 +17,12 @@ public class Recipe {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCategory() {
