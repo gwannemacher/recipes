@@ -1,17 +1,17 @@
 import React from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import { useQuery, useApolloClient } from '@apollo/client';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 import RecipeGroup from './components/RecipeGroup.tsx';
 import { Category } from './models/recipes.ts';
-import { RECIPES_QUERY } from './queries.ts';
+import useIsEditMode from './hooks/useIsEditMode.ts';
 
 const Home = () => {
-    const client = useApolloClient();
-    const { loading, data } = useQuery(RECIPES_QUERY);
-    const recipes = data?.getRecipes;
+    const isEditMode = useIsEditMode();
 
     return (
         <Stack spacing={2} sx={{ textAlign: 'center', marginTop: '75px' }}>
@@ -35,6 +35,16 @@ const Home = () => {
                     <RecipeGroup category={Category.OTHER} />
                 </Stack>
             </Stack>
+            {isEditMode && (
+                <Box>
+                    <Button
+                        sx={{ textTransform: 'lowercase', marginTop: '50px' }}
+                        variant="contained"
+                    >
+                        add new recipe
+                    </Button>
+                </Box>
+            )}
         </Stack>
     );
 };
