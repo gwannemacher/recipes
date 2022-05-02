@@ -10,6 +10,7 @@ import {
 
 import Home from './Home.tsx';
 import Recipe from './components/Recipe.tsx';
+import AddNewRecipe from './components/AddNew.tsx';
 
 import './index.css';
 
@@ -31,6 +32,7 @@ root.render(
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/:recipeId" element={<Recipe />} />
+                    <Route path="/add-new" element={<AddNewRecipe />} />
                 </Routes>
             </BrowserRouter>
         </ApolloProvider>
