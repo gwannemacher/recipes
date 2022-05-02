@@ -7,6 +7,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 
 import Recipes from '../models/recipes.ts';
+import useGetRecipes from '../hooks/useGetRecipes.ts';
 
 const RecipeCheckbox = (props) => {
     const [checked, setChecked] = React.useState(false);
@@ -127,8 +128,10 @@ const RecipeName = (props) => {
 
 const Recipe = (props) => {
     const params = useParams();
-    const filtered = Recipes.filter((x) => x.id === params.recipeId);
-    const recipe = filtered.length > 0 ? filtered[0] : {};
+
+    const [loading, allRecipes] = useGetRecipes();
+    const filtered = allRecipes?.filter((x) => x.id === params.recipeId);
+    const recipe = filtered?.length > 0 ? filtered[0] : {};
 
     return (
         <>
