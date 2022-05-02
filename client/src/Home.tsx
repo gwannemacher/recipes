@@ -41,7 +41,7 @@ const Home = () => {
                     <Button
                         sx={{ textTransform: 'lowercase', marginTop: '50px' }}
                         variant="contained"
-                        onClick={() => navigate('/add-new')}
+                        onClick={() => navigate('/form')}
                     >
                         add new recipe
                     </Button>
