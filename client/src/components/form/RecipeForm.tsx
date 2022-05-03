@@ -66,10 +66,10 @@ const RecipeForm = (props) => {
                     name: values.name,
                     category: values.category,
                     ingredients: values.ingredients,
-                    instructions: values.instructions
+                    instructions: values.instructions,
                 },
             });
-            navigate('/?mode=edit');
+            navigate('/');
         },
     });
 

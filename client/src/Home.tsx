@@ -8,10 +8,10 @@ import Button from '@mui/material/Button';
 
 import RecipeGroup from './components/RecipeGroup.tsx';
 import { Category } from './models/recipes.ts';
-import useIsEditMode from './hooks/useIsEditMode.ts';
+import { useEditModeContext } from './EditModeContextProvider.tsx';
 
 const Home = () => {
-    const isEditMode = useIsEditMode();
+    const isEditMode = useEditModeContext();
     const navigate = useNavigate();
 
     return (

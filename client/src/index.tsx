@@ -7,10 +7,12 @@ import {
     createHttpLink,
     InMemoryCache,
 } from '@apollo/client';
+import { useSearchParams } from 'react-router-dom';
 
 import Home from './Home.tsx';
 import Recipe from './components/Recipe.tsx';
 import RecipeForm from './components/form/RecipeForm.tsx';
+import EditModeContextProvider from './EditModeContextProvider.tsx';
 
 import './index.css';
 
@@ -29,11 +31,13 @@ root.render(
     <React.StrictMode>
         <ApolloProvider client={client}>
             <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/:recipeId" element={<Recipe />} />
-                    <Route path="/form" element={<RecipeForm />} />
-                </Routes>
+                <EditModeContextProvider>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/:recipeId" element={<Recipe />} />
+                        <Route path="/form" element={<RecipeForm />} />
+                    </Routes>
+                </EditModeContextProvider>
             </BrowserRouter>
         </ApolloProvider>
     </React.StrictMode>
