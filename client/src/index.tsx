@@ -10,7 +10,7 @@ import {
 
 import Home from './Home.tsx';
 import Recipe from './components/Recipe.tsx';
-import RecipeForm from './components/RecipeForm.tsx';
+import RecipeForm from './components/form/RecipeForm.tsx';
 
 import './index.css';
 
