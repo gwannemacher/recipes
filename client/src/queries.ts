@@ -11,3 +11,25 @@ export const RECIPES_QUERY = gql`
         }
     }
 `;
+
+export const ADD_RECIPE_MUTATION = gql`
+    mutation AddRecipe(
+        $name: String!
+        $category: String!
+        $ingredients: String!
+        $instructions: String!
+    ) {
+        addRecipe(
+            name: $name
+            category: $category
+            ingredients: $ingredients
+            instructions: $instructions
+        ) {
+            id
+            name
+            category
+            ingredients
+            instructions
+        }
+    }
+`;

@@ -16,7 +16,25 @@ const Home = () => {
 
     return (
         <Stack spacing={2} sx={{ textAlign: 'center', marginTop: '75px' }}>
-            <Box sx={{ fontSize: '3.5em' }}>recipes</Box>
+            <Box sx={{ fontSize: '3.5em' }}>
+                {isEditMode ? (
+                    <Box>
+                        recipes
+                        <Button
+                            sx={{
+                                textTransform: 'lowercase',
+                                marginLeft: '20px',
+                            }}
+                            variant="contained"
+                            onClick={() => navigate('/form')}
+                        >
+                            add
+                        </Button>
+                    </Box>
+                ) : (
+                    'recipes'
+                )}
+            </Box>
             <Stack
                 sx={{
                     paddingTop: '50px',
@@ -36,17 +54,6 @@ const Home = () => {
                     <RecipeGroup category={Category.OTHER} />
                 </Stack>
             </Stack>
-            {isEditMode && (
-                <Box>
-                    <Button
-                        sx={{ textTransform: 'lowercase', marginTop: '50px' }}
-                        variant="contained"
-                        onClick={() => navigate('/form')}
-                    >
-                        add new recipe
-                    </Button>
-                </Box>
-            )}
         </Stack>
     );
 };

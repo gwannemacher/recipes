@@ -17,6 +17,8 @@ import CategoryField from './CategoryField.tsx';
 import IngredientsField from './IngredientsField.tsx';
 import InstructionsField from './InstructionsField.tsx';
 import SubmitButton from './SubmitButton.tsx';
+import { Category } from '../../models/recipes.ts';
+import useAddRecipe from '../../hooks/useAddRecipe.ts';
 
 const FormTitle = (props) => {
     return (
@@ -35,6 +37,7 @@ const FormTitle = (props) => {
 
 const RecipeForm = (props) => {
     const navigate = useNavigate();
+    const [addRecipe] = useAddRecipe();
 
     const validationSchema = yup.object({
         name: yup
@@ -51,13 +54,21 @@ const RecipeForm = (props) => {
     const formik = useFormik({
         initialValues: {
             name: '',
-            category: 10,
+            category: Category.BREAKFAST,
             ingredients: '',
             instructions: '',
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
             alert(JSON.stringify(values, null, 2));
+            addRecipe({
+                variables: {
+                    name: values.name,
+                    category: values.category,
+                    ingredients: values.ingredients,
+                    instructions: values.instructions
+                },
+            });
             navigate('/?mode=edit');
         },
     });
@@ -71,14 +82,16 @@ const RecipeForm = (props) => {
                 textTransform: 'lowercase',
             }}
         >
-            <Stack>
+            <Stack sx={{ width: '550px' }}>
                 <FormTitle />
                 <form onSubmit={formik.handleSubmit}>
                     <NameField formik={formik} />
                     <CategoryField formik={formik} />
                     <IngredientsField formik={formik} />
                     <InstructionsField formik={formik} />
-                    <SubmitButton />
+                    <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+                        <SubmitButton />
+                    </Box>
                 </form>
             </Stack>
         </Box>

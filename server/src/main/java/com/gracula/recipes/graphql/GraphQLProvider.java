@@ -67,6 +67,8 @@ public class GraphQLProvider {
         return RuntimeWiring.newRuntimeWiring()
             .type(newTypeWiring("Query")
                 .dataFetcher("getRecipes", graphQLDataFetchers.getRecipesDataFetcher()))
+            .type(newTypeWiring("Mutation")
+                .dataFetcher("addRecipe", graphQLDataFetchers.addRecipe()))
             .build();
     }
 }

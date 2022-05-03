@@ -12,6 +12,8 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
 
+import { Category } from '../../models/recipes.ts';
+
 const NameField = (props) => {
     const { formik } = props;
 
@@ -27,9 +29,30 @@ const NameField = (props) => {
                 value={formik.values.category}
                 onChange={formik.handleChange}
             >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem
+                    sx={{ textTransform: 'lowercase' }}
+                    value={Category.BREAKFAST}
+                >
+                    {Category.BREAKFAST}
+                </MenuItem>
+                <MenuItem
+                    sx={{ textTransform: 'lowercase' }}
+                    value={Category.SOUP}
+                >
+                    {Category.SOUP}
+                </MenuItem>
+                <MenuItem
+                    sx={{ textTransform: 'lowercase' }}
+                    value={Category.PASTA}
+                >
+                    {Category.PASTA}
+                </MenuItem>
+                <MenuItem
+                    sx={{ textTransform: 'lowercase' }}
+                    value={Category.OTHER}
+                >
+                    {Category.OTHER}
+                </MenuItem>
             </Select>
         </FormControl>
     );
