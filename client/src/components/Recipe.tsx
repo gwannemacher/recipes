@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 
 import Recipes from '../models/recipes.ts';
 import useGetRecipes from '../hooks/useGetRecipes.ts';
+import { useEditModeContext } from '../EditModeContextProvider.tsx';
 
 const RecipeCheckbox = (props) => {
     const [checked, setChecked] = React.useState(false);
@@ -113,6 +114,9 @@ const GoHomeButton = () => {
 };
 
 const RecipeName = (props) => {
+    const isEditMode = useEditModeContext();
+    const navigate = useNavigate();
+
     return (
         <Box
             sx={{
@@ -121,7 +125,25 @@ const RecipeName = (props) => {
                 justifyContent: 'center',
             }}
         >
-            {props.recipeName}
+            {isEditMode ? (
+                <Box>
+                    {props.recipeName}
+                    <Button
+                        sx={{
+                            textTransform: 'lowercase',
+                            marginLeft: '20px',
+                        }}
+                        variant="contained"
+                        onClick={() =>
+                            navigate(`/form?recipe=${props.recipeId}`)
+                        }
+                    >
+                        edit
+                    </Button>
+                </Box>
+            ) : (
+                props.recipeName
+            )}
         </Box>
     );
 };
@@ -145,7 +167,7 @@ const Recipe = (props) => {
                 }}
             >
                 <Stack sx={{ width: '750px', paddingBottom: '100px' }}>
-                    <RecipeName recipeName={recipe.name} />
+                    <RecipeName recipeName={recipe.name} recipeId={recipe.id} />
                     <Ingredients ingredients={recipe.ingredients} />
                     <Instructions instructions={recipe.instructions} />
                 </Stack>

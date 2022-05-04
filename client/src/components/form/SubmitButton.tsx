@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { useSearchParams } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -14,6 +15,8 @@ import Stack from '@mui/material/Stack';
 
 const SubmitButton = (props) => {
     const { formik } = props;
+    const [searchParams] = useSearchParams();
+    const recipeId = searchParams.get('recipe');
 
     return (
         <Button
@@ -21,7 +24,7 @@ const SubmitButton = (props) => {
             type="submit"
             variant="contained"
         >
-            add
+            {recipeId ? 'update' : 'add'}
         </Button>
     );
 };

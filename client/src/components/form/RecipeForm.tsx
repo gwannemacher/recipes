@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 
@@ -11,6 +12,7 @@ import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import NameField from './NameField.tsx';
 import CategoryField from './CategoryField.tsx';
@@ -19,8 +21,13 @@ import InstructionsField from './InstructionsField.tsx';
 import SubmitButton from './SubmitButton.tsx';
 import { Category } from '../../models/recipes.ts';
 import useAddRecipe from '../../hooks/useAddRecipe.ts';
+import useGetRecipes from '../../hooks/useGetRecipes.ts';
+import { useEditModeContext } from '../../EditModeContextProvider.tsx';
 
 const FormTitle = (props) => {
+    const [searchParams] = useSearchParams();
+    const recipeId = searchParams.get('recipe');
+
     return (
         <Box
             sx={{
@@ -30,15 +37,12 @@ const FormTitle = (props) => {
                 paddingBottom: '50px',
             }}
         >
-            New recipe
+            {recipeId ? 'Edit recipe' : 'New recipe'}
         </Box>
     );
 };
 
-const RecipeForm = (props) => {
-    const navigate = useNavigate();
-    const [addRecipe] = useAddRecipe();
-
+const FormikForm = (props) => {
     const validationSchema = yup.object({
         name: yup
             .string('enter recipe name')
@@ -51,12 +55,18 @@ const RecipeForm = (props) => {
             .required('instructions list is required'),
     });
 
+    const navigate = useNavigate();
+    const [addRecipe] = useAddRecipe();
     const formik = useFormik({
         initialValues: {
-            name: '',
-            category: Category.BREAKFAST,
-            ingredients: '',
-            instructions: '',
+            name: props.recipe ? props.recipe.name : '',
+            category: props.recipe ? props.recipe.category : Category.BREAKFAST,
+            ingredients: props.recipe
+                ? props.recipe.ingredients.reduce((p, c) => p + c + '\n', '')
+                : '',
+            instructions: props.recipe
+                ? props.recipe.instructions.reduce((p, c) => p + c + '\n', '')
+                : '',
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
@@ -96,6 +106,35 @@ const RecipeForm = (props) => {
             </Stack>
         </Box>
     );
+};
+
+const RecipeForm = (props) => {
+    const [searchParams] = useSearchParams();
+    const recipeId = searchParams.get('recipe');
+
+    const [loading, allRecipes] = useGetRecipes();
+    const filtered = allRecipes?.filter((x) => x.id === recipeId);
+    const recipe = filtered?.length > 0 ? filtered[0] : null;
+
+    if (!recipeId) {
+        return <FormikForm recipe={recipe} />;
+    }
+
+    if (loading || !recipe) {
+        return (
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    marginTop: '350px',
+                }}
+            >
+                <CircularProgress />
+            </Box>
+        );
+    } else {
+        return <FormikForm recipe={recipe} />;
+    }
 };
 
 export default RecipeForm;
