@@ -13,6 +13,7 @@ import CategoryField from './CategoryField.tsx';
 import IngredientsField from './IngredientsField.tsx';
 import InstructionsField from './InstructionsField.tsx';
 import SubmitButton from './SubmitButton.tsx';
+import CancelButton from './CancelButton.tsx';
 import Category from '../../models/recipe-category.ts';
 import useAddRecipe from '../../hooks/useAddRecipe.ts';
 import useUpdateRecipe from '../../hooks/useUpdateRecipe.ts';
@@ -140,6 +141,7 @@ const FormikForm = (props) => {
                     />
                     <Box sx={{ display: 'flex', justifyContent: 'end' }}>
                         <SubmitButton />
+                        <CancelButton />
                     </Box>
                 </form>
             </Stack>

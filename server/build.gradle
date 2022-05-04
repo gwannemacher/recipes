@@ -31,3 +31,11 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+task copyWebApp(type: Copy) {
+	from "$rootDir/client/build"
+	into "$rootDir/server/build/resources/main/static/."
+}
+
+bootJar.dependsOn(copyWebApp)
+compileJava.dependsOn ":client:build"
