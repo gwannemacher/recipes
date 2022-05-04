@@ -5,12 +5,6 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -22,7 +16,6 @@ import SubmitButton from './SubmitButton.tsx';
 import { Category } from '../../models/recipes.ts';
 import useAddRecipe from '../../hooks/useAddRecipe.ts';
 import useGetRecipes from '../../hooks/useGetRecipes.ts';
-import { useEditModeContext } from '../../EditModeContextProvider.tsx';
 
 const FormTitle = (props) => {
     const [searchParams] = useSearchParams();
@@ -43,6 +36,9 @@ const FormTitle = (props) => {
 };
 
 const FormikForm = (props) => {
+    const navigate = useNavigate();
+    const [addRecipe] = useAddRecipe();
+
     const validationSchema = yup.object({
         name: yup
             .string('enter recipe name')
@@ -55,12 +51,10 @@ const FormikForm = (props) => {
             .required('instructions list is required'),
     });
 
-    const navigate = useNavigate();
-    const [addRecipe] = useAddRecipe();
     const formik = useFormik({
         initialValues: {
-            name: props.recipe ? props.recipe.name : '',
-            category: props.recipe ? props.recipe.category : Category.BREAKFAST,
+            name: props.recipe?.name ?? '',
+            category: props.recipe?.category ?? Category.BREAKFAST,
             ingredients: props.recipe
                 ? props.recipe.ingredients.reduce((p, c) => p + c + '\n', '')
                 : '',
@@ -70,7 +64,6 @@ const FormikForm = (props) => {
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
             addRecipe({
                 variables: {
                     name: values.name,
@@ -116,11 +109,7 @@ const RecipeForm = (props) => {
     const filtered = allRecipes?.filter((x) => x.id === recipeId);
     const recipe = filtered?.length > 0 ? filtered[0] : null;
 
-    if (!recipeId) {
-        return <FormikForm recipe={recipe} />;
-    }
-
-    if (loading || !recipe) {
+    if (recipeId && (loading || !recipe)) {
         return (
             <Box
                 sx={{

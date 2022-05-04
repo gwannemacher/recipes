@@ -7,7 +7,6 @@ import {
     createHttpLink,
     InMemoryCache,
 } from '@apollo/client';
-import { useSearchParams } from 'react-router-dom';
 
 import Home from './Home.tsx';
 import Recipe from './components/Recipe.tsx';

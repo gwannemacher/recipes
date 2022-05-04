@@ -10,31 +10,37 @@ import RecipeGroup from './components/RecipeGroup.tsx';
 import { Category } from './models/recipes.ts';
 import { useEditModeContext } from './EditModeContextProvider.tsx';
 
-const Home = () => {
+const Title = () => {
     const isEditMode = useEditModeContext();
     const navigate = useNavigate();
 
     return (
+        <Box sx={{ fontSize: '3.5em' }}>
+            {isEditMode ? (
+                <Box>
+                    recipes
+                    <Button
+                        sx={{
+                            textTransform: 'lowercase',
+                            marginLeft: '20px',
+                        }}
+                        variant="contained"
+                        onClick={() => navigate('/form')}
+                    >
+                        add
+                    </Button>
+                </Box>
+            ) : (
+                'recipes'
+            )}
+        </Box>
+    );
+};
+
+const Home = () => {
+    return (
         <Stack spacing={2} sx={{ textAlign: 'center', marginTop: '75px' }}>
-            <Box sx={{ fontSize: '3.5em' }}>
-                {isEditMode ? (
-                    <Box>
-                        recipes
-                        <Button
-                            sx={{
-                                textTransform: 'lowercase',
-                                marginLeft: '20px',
-                            }}
-                            variant="contained"
-                            onClick={() => navigate('/form')}
-                        >
-                            add
-                        </Button>
-                    </Box>
-                ) : (
-                    'recipes'
-                )}
-            </Box>
+            <Title />
             <Stack
                 sx={{
                     paddingTop: '50px',
