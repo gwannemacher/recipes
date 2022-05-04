@@ -1,13 +1,12 @@
 import React from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import { useQuery, useApolloClient } from '@apollo/client';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 import RecipeGroup from './components/RecipeGroup.tsx';
-import { Category } from './models/recipes.ts';
+import Category from './models/recipe-category.ts';
 import { useEditModeContext } from './EditModeContextProvider.tsx';
 
 const Title = () => {

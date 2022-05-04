@@ -13,7 +13,7 @@ import CategoryField from './CategoryField.tsx';
 import IngredientsField from './IngredientsField.tsx';
 import InstructionsField from './InstructionsField.tsx';
 import SubmitButton from './SubmitButton.tsx';
-import { Category } from '../../models/recipes.ts';
+import Category from '../../models/recipe-category.ts';
 import useAddRecipe from '../../hooks/useAddRecipe.ts';
 import useGetRecipes from '../../hooks/useGetRecipes.ts';
 
