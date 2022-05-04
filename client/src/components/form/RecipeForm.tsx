@@ -15,6 +15,7 @@ import InstructionsField from './InstructionsField.tsx';
 import SubmitButton from './SubmitButton.tsx';
 import Category from '../../models/recipe-category.ts';
 import useAddRecipe from '../../hooks/useAddRecipe.ts';
+import useUpdateRecipe from '../../hooks/useUpdateRecipe.ts';
 import useGetRecipes from '../../hooks/useGetRecipes.ts';
 
 const FormTitle = (props) => {
@@ -38,6 +39,7 @@ const FormTitle = (props) => {
 const FormikForm = (props) => {
     const navigate = useNavigate();
     const [addRecipe] = useAddRecipe();
+    const [updateRecipe] = useUpdateRecipe();
 
     const validationSchema = yup.object({
         name: yup
@@ -64,14 +66,26 @@ const FormikForm = (props) => {
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            addRecipe({
-                variables: {
-                    name: values.name,
-                    category: values.category,
-                    ingredients: values.ingredients,
-                    instructions: values.instructions,
-                },
-            });
+            if (props.recipe) {
+                updateRecipe({
+                    variables: {
+                        id: props.recipe.id,
+                        name: values.name,
+                        category: values.category,
+                        ingredients: values.ingredients,
+                        instructions: values.instructions,
+                    },
+                });
+            } else {
+                addRecipe({
+                    variables: {
+                        name: values.name,
+                        category: values.category,
+                        ingredients: values.ingredients,
+                        instructions: values.instructions,
+                    },
+                });
+            }
             navigate('/');
         },
     });
@@ -88,10 +102,42 @@ const FormikForm = (props) => {
             <Stack sx={{ width: '550px' }}>
                 <FormTitle />
                 <form onSubmit={formik.handleSubmit}>
-                    <NameField formik={formik} />
-                    <CategoryField formik={formik} />
-                    <IngredientsField formik={formik} />
-                    <InstructionsField formik={formik} />
+                    <NameField
+                        value={formik.values.name}
+                        handleChange={formik.handleChange}
+                        error={
+                            formik.touched.name && Boolean(formik.errors.name)
+                        }
+                        helperText={formik.touched.name && formik.errors.name}
+                    />
+                    <CategoryField
+                        value={formik.values.category}
+                        handleChange={formik.handleChange}
+                    />
+                    <IngredientsField
+                        value={formik.values.ingredients}
+                        handleChange={formik.handleChange}
+                        error={
+                            formik.touched.ingredients &&
+                            Boolean(formik.errors.ingredients)
+                        }
+                        helperText={
+                            formik.touched.ingredients &&
+                            formik.errors.ingredients
+                        }
+                    />
+                    <InstructionsField
+                        value={formik.values.instructions}
+                        handleChange={formik.handleChange}
+                        error={
+                            formik.touched.instructions &&
+                            Boolean(formik.errors.instructions)
+                        }
+                        helperText={
+                            formik.touched.instructions &&
+                            formik.errors.instructions
+                        }
+                    />
                     <Box sx={{ display: 'flex', justifyContent: 'end' }}>
                         <SubmitButton />
                     </Box>

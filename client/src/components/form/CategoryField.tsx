@@ -8,8 +8,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Category from '../../models/recipe-category.ts';
 
 const NameField = (props) => {
-    const { formik } = props;
-
     return (
         <FormControl fullWidth>
             <InputLabel>category</InputLabel>
@@ -19,8 +17,8 @@ const NameField = (props) => {
                 name="category"
                 label="category"
                 type="category"
-                value={formik.values.category}
-                onChange={formik.handleChange}
+                value={props.value}
+                onChange={props.handleChange}
             >
                 <MenuItem
                     sx={{ textTransform: 'lowercase' }}

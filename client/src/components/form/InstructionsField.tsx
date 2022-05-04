@@ -13,8 +13,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
 
 const InstructionsField = (props) => {
-    const { formik } = props;
-
     return (
         <TextField
             fullWidth
@@ -24,15 +22,10 @@ const InstructionsField = (props) => {
             id="instructions"
             name="instructions"
             label="instructions"
-            value={formik.values.instructions}
-            onChange={formik.handleChange}
-            error={
-                formik.touched.instructions &&
-                Boolean(formik.errors.instructions)
-            }
-            helperText={
-                formik.touched.instructions && formik.errors.instructions
-            }
+            value={props.value}
+            onChange={props.handleChange}
+            error={props.error}
+            helperText={props.helperText}
         />
     );
 };

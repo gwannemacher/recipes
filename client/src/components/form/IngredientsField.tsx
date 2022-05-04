@@ -13,8 +13,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
 
 const IngredientsField = (props) => {
-    const { formik } = props;
-
     return (
         <TextField
             fullWidth
@@ -24,12 +22,10 @@ const IngredientsField = (props) => {
             id="ingredients"
             name="ingredients"
             label="ingredients"
-            value={formik.values.ingredients}
-            onChange={formik.handleChange}
-            error={
-                formik.touched.ingredients && Boolean(formik.errors.ingredients)
-            }
-            helperText={formik.touched.ingredients && formik.errors.ingredients}
+            value={props.value}
+            onChange={props.handleChange}
+            error={props.error}
+            helperText={props.helperText}
         />
     );
 };

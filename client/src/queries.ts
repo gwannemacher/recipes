@@ -33,3 +33,27 @@ export const ADD_RECIPE_MUTATION = gql`
         }
     }
 `;
+
+export const UPDATE_RECIPE_MUTATION = gql`
+    mutation UpdateRecipe(
+        $id: String!
+        $name: String!
+        $category: String!
+        $ingredients: String!
+        $instructions: String!
+    ) {
+        updateRecipe(
+            id: $id
+            name: $name
+            category: $category
+            ingredients: $ingredients
+            instructions: $instructions
+        ) {
+            id
+            name
+            category
+            ingredients
+            instructions
+        }
+    }
+`;

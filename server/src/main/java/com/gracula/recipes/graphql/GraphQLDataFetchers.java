@@ -3,7 +3,9 @@ package com.gracula.recipes.graphql;
 import com.google.common.collect.ImmutableList;
 import com.gracula.recipes.data.MongoDbClient;
 import com.gracula.recipes.models.Recipe;
+import com.mongodb.client.model.Updates;
 import graphql.schema.DataFetcher;
+import org.bson.conversions.Bson;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -50,6 +52,27 @@ public class GraphQLDataFetchers {
             recipe.setInstructions(instructions);
 
             mongoClient.recipeCollection.insertOne(recipe);
+
+            return recipe;
+        };
+    }
+
+    public DataFetcher<Recipe> updateRecipe() {
+        return env -> {
+            final String id = env.getArgument("id");
+            final List<String> ingredients = stringToList(env.getArgument("ingredients"));
+            final List<String> instructions = stringToList(env.getArgument("instructions"));
+
+            final Bson updates = Updates.combine(
+                    Updates.set("name", env.getArgument("name")),
+                    Updates.set("category", env.getArgument("category")),
+                    Updates.set("ingredients", ingredients),
+                    Updates.set("instructions", instructions)
+            );
+
+            mongoClient.recipeCollection.findOneAndUpdate(eq("_id", id), updates);
+            Recipe recipe = mongoClient.recipeCollection.find(
+                    eq("_id", id)).first();
 
             return recipe;
         };
