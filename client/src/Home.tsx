@@ -1,15 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { styled } from '@mui/material/styles';
 
 import RecipeGroup from './components/RecipeGroup.tsx';
 import Category from './models/recipe-category.ts';
+import { TopPadding, BottomPadding } from './layout/padding.tsx';
 import { useEditModeContext } from './EditModeContextProvider.tsx';
 
 const Title = () => {
@@ -17,7 +16,13 @@ const Title = () => {
     const navigate = useNavigate();
 
     return (
-        <Box sx={{ fontSize: '3.5em', display: 'flex', justifyContent: 'center' }}>
+        <Box
+            sx={{
+                fontSize: '3.5em',
+                display: 'flex',
+                justifyContent: 'center',
+            }}
+        >
             {isEditMode ? (
                 <Box>
                     recipes
@@ -38,30 +43,6 @@ const Title = () => {
         </Box>
     );
 };
-
-const TopPadding = styled('div')(({ theme }) => ({
-    [theme.breakpoints.down('md')]: {
-        padding: '0px',
-    },
-    [theme.breakpoints.up('md')]: {
-        padding: '10px',
-    },
-    [theme.breakpoints.up('lg')]: {
-        padding: '30px',
-    },
-}));
-
-const BottomPadding = styled('div')(({ theme }) => ({
-    [theme.breakpoints.down('md')]: {
-        padding: '10px',
-    },
-    [theme.breakpoints.up('md')]: {
-        padding: '15px',
-    },
-    [theme.breakpoints.up('lg')]: {
-        padding: '25px',
-    },
-}));
 
 const Home = () => {
     return (
