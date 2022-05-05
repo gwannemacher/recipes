@@ -16,8 +16,8 @@ import EditModeContextProvider from './EditModeContextProvider.tsx';
 import './index.css';
 
 const httpLink = createHttpLink({
-    uri: 'http://localhost:8080/graphql',
-    // uri: 'https://gracula-recipes.herokuapp.com/graphql',
+    // uri: 'http://localhost:8080/graphql',
+    uri: 'https://gracula-recipes.herokuapp.com/graphql',
 });
 
 const client = new ApolloClient({
