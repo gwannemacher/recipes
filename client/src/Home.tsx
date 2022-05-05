@@ -41,7 +41,7 @@ const Title = () => {
 
 const TopPadding = styled('div')(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
-        padding: '5px',
+        padding: '0px',
     },
     [theme.breakpoints.up('md')]: {
         padding: '10px',
