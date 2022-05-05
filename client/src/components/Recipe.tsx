@@ -7,7 +7,6 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
-import Recipes from '../models/recipes.ts';
 import useGetRecipes from '../hooks/useGetRecipes.ts';
 import { TopPadding, BottomPadding } from '../layout/padding.tsx';
 import { useEditModeContext } from '../EditModeContextProvider.tsx';
@@ -153,7 +152,7 @@ const RecipeName = (props) => {
 const Recipe = (props) => {
     const params = useParams();
 
-    const [loading, allRecipes] = useGetRecipes();
+    const [allRecipes] = useGetRecipes();
     const filtered = allRecipes?.filter((x) => x.id === params.recipeId);
     const recipe = filtered?.length > 0 ? filtered[0] : {};
 

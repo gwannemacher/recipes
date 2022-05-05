@@ -7,6 +7,7 @@ import * as yup from 'yup';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
+import Container from '@mui/material/Container';
 
 import NameField from './NameField.tsx';
 import CategoryField from './CategoryField.tsx';
@@ -18,6 +19,7 @@ import Category from '../../models/recipe-category.ts';
 import useAddRecipe from '../../hooks/useAddRecipe.ts';
 import useUpdateRecipe from '../../hooks/useUpdateRecipe.ts';
 import useGetRecipes from '../../hooks/useGetRecipes.ts';
+import { TopPadding, BottomPadding } from '../../layout/padding.tsx';
 
 const FormTitle = (props) => {
     const [searchParams] = useSearchParams();
@@ -29,7 +31,6 @@ const FormTitle = (props) => {
                 fontSize: '3em',
                 display: 'flex',
                 justifyContent: 'center',
-                paddingBottom: '50px',
             }}
         >
             {recipeId ? 'Edit recipe' : 'New recipe'}
@@ -92,16 +93,14 @@ const FormikForm = (props) => {
     });
 
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                marginTop: '65px',
-                textTransform: 'lowercase',
-            }}
+        <Container
+            maxWidth="sm"
+            sx={{ padding: '25px', flexGrow: 1, textTransform: 'lowercase' }}
         >
-            <Stack sx={{ width: '550px' }}>
+            <Stack>
+                <TopPadding />
                 <FormTitle />
+                <BottomPadding />
                 <form onSubmit={formik.handleSubmit}>
                     <NameField
                         value={formik.values.name}
@@ -145,7 +144,7 @@ const FormikForm = (props) => {
                     </Box>
                 </form>
             </Stack>
-        </Box>
+        </Container>
     );
 };
 
@@ -159,7 +158,7 @@ const RecipeForm = (props) => {
 
     if (recipeId && (loading || !recipe)) {
         return (
-            <Box
+            <Container
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -167,7 +166,7 @@ const RecipeForm = (props) => {
                 }}
             >
                 <CircularProgress />
-            </Box>
+            </Container>
         );
     } else {
         return <FormikForm recipe={recipe} />;
