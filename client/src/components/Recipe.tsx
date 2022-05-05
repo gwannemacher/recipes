@@ -12,6 +12,33 @@ import useGetRecipes from '../hooks/useGetRecipes.ts';
 import { TopPadding, BottomPadding } from '../layout/padding.tsx';
 import { useEditModeContext } from '../EditModeContextProvider.tsx';
 
+const GoHomeButton = () => {
+    const navigate = useNavigate();
+
+    return (
+        <Button
+            onClick={() => navigate('/')}
+            variant="text"
+            sx={{
+                textTransform: 'lowercase',
+                padding: '10px',
+                position: 'absolute',
+                justifyContent: 'start',
+                fontSize: 'unset',
+                lineHeight: 'unset',
+                '&.MuiButtonBase-root.MuiButton-root': {
+                    '&:hover': {
+                        backgroundColor: 'transparent',
+                        color: 'MediumPurple',
+                    },
+                },
+            }}
+        >
+            go home
+        </Button>
+    );
+};
+
 const RecipeCheckbox = (props) => {
     const [checked, setChecked] = React.useState(false);
 
@@ -85,33 +112,6 @@ const Instructions = (props) => {
                 </Box>
             ))}
         </Box>
-    );
-};
-
-const GoHomeButton = () => {
-    const navigate = useNavigate();
-
-    return (
-        <Button
-            onClick={() => navigate('/')}
-            variant="text"
-            sx={{
-                textTransform: 'lowercase',
-                padding: '10px',
-                position: 'absolute',
-                justifyContent: 'start',
-                fontSize: 'unset',
-                lineHeight: 'unset',
-                '&.MuiButtonBase-root.MuiButton-root': {
-                    '&:hover': {
-                        backgroundColor: 'transparent',
-                        color: 'MediumPurple',
-                    },
-                },
-            }}
-        >
-            go home
-        </Button>
     );
 };
 
