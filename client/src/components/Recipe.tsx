@@ -5,9 +5,11 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
 
 import Recipes from '../models/recipes.ts';
 import useGetRecipes from '../hooks/useGetRecipes.ts';
+import { TopPadding, BottomPadding } from '../layout/padding.tsx';
 import { useEditModeContext } from '../EditModeContextProvider.tsx';
 
 const RecipeCheckbox = (props) => {
@@ -41,11 +43,10 @@ const RecipeCheckbox = (props) => {
 
 const Ingredients = (props) => {
     return (
-        <Box sx={{ marginTop: '50px' }}>
+        <Box>
             <Box
                 sx={{
                     fontSize: '1.75em',
-                    paddingBottom: '10px',
                     paddingTop: '5px',
                 }}
             >
@@ -97,6 +98,7 @@ const GoHomeButton = () => {
             sx={{
                 textTransform: 'lowercase',
                 padding: '10px',
+                position: 'absolute',
                 justifyContent: 'start',
                 fontSize: 'unset',
                 lineHeight: 'unset',
@@ -158,20 +160,26 @@ const Recipe = (props) => {
     return (
         <>
             <GoHomeButton />
-            <Box
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    marginTop: '65px',
-                    textTransform: 'lowercase',
-                }}
-            >
-                <Stack sx={{ width: '750px', paddingBottom: '100px' }}>
-                    <RecipeName recipeName={recipe.name} recipeId={recipe.id} />
-                    <Ingredients ingredients={recipe.ingredients} />
-                    <Instructions instructions={recipe.instructions} />
-                </Stack>
-            </Box>
+            <Container maxWidth="md" sx={{ padding: '25px', flexGrow: 1 }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        textTransform: 'lowercase',
+                    }}
+                >
+                    <Stack sx={{ width: '750px', paddingBottom: '100px' }}>
+                        <TopPadding />
+                        <RecipeName
+                            recipeName={recipe.name}
+                            recipeId={recipe.id}
+                        />
+                        <BottomPadding />
+                        <Ingredients ingredients={recipe.ingredients} />
+                        <Instructions instructions={recipe.instructions} />
+                    </Stack>
+                </Box>
+            </Container>
         </>
     );
 };
