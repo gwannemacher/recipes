@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
 
 import RecipeGroup from './components/RecipeGroup.tsx';
 import Category from './models/recipe-category.ts';
-import { TopPadding, BottomPadding } from './layout/padding.tsx';
+import { TitlePadding } from './layout/TitlePadding.tsx';
 import { useEditModeContext } from './EditModeContextProvider.tsx';
 
 const Title = () => {
@@ -47,9 +47,7 @@ const Title = () => {
 const Home = () => {
     return (
         <Container maxWidth="sm" sx={{ padding: '25px', flexGrow: 1 }}>
-            <TopPadding />
-            <Title />
-            <BottomPadding />
+            <TitlePadding content={<Title />} />
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={4} sx={{ width: 'fit-content' }}>
                     <RecipeGroup category={Category.BREAKFAST} />

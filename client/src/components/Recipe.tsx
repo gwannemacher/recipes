@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
 import useGetRecipes from '../hooks/useGetRecipes.ts';
-import { TopPadding, BottomPadding } from '../layout/padding.tsx';
+import { TitlePadding } from '../layout/TitlePadding.tsx';
 import { useEditModeContext } from '../EditModeContextProvider.tsx';
 
 const GoHomeButton = () => {
@@ -152,9 +152,12 @@ const RecipeName = (props) => {
 const Recipe = (props) => {
     const params = useParams();
 
-    const [allRecipes] = useGetRecipes();
+    const [loading, allRecipes] = useGetRecipes();
     const filtered = allRecipes?.filter((x) => x.id === params.recipeId);
     const recipe = filtered?.length > 0 ? filtered[0] : {};
+    const recipeName = (
+        <RecipeName recipeName={recipe.name} recipeId={recipe.id} />
+    );
 
     return (
         <>
@@ -168,12 +171,7 @@ const Recipe = (props) => {
                     }}
                 >
                     <Stack sx={{ width: '750px', paddingBottom: '100px' }}>
-                        <TopPadding />
-                        <RecipeName
-                            recipeName={recipe.name}
-                            recipeId={recipe.id}
-                        />
-                        <BottomPadding />
+                        <TitlePadding content={recipeName} />
                         <Ingredients ingredients={recipe.ingredients} />
                         <Instructions instructions={recipe.instructions} />
                     </Stack>

@@ -19,7 +19,7 @@ import Category from '../../models/recipe-category.ts';
 import useAddRecipe from '../../hooks/useAddRecipe.ts';
 import useUpdateRecipe from '../../hooks/useUpdateRecipe.ts';
 import useGetRecipes from '../../hooks/useGetRecipes.ts';
-import { TopPadding, BottomPadding } from '../../layout/padding.tsx';
+import { TitlePadding } from '../../layout/TitlePadding.tsx';
 
 const FormTitle = (props) => {
     const [searchParams] = useSearchParams();
@@ -98,9 +98,7 @@ const FormikForm = (props) => {
             sx={{ padding: '25px', flexGrow: 1, textTransform: 'lowercase' }}
         >
             <Stack>
-                <TopPadding />
-                <FormTitle />
-                <BottomPadding />
+                <TitlePadding content={<FormTitle />} />
                 <form onSubmit={formik.handleSubmit}>
                     <NameField
                         value={formik.values.name}

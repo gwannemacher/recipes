@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 
-export const TopPadding = styled('div')(({ theme }) => ({
+const TopPadding = styled('div')(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         padding: '0px',
     },
@@ -13,7 +13,7 @@ export const TopPadding = styled('div')(({ theme }) => ({
     },
 }));
 
-export const BottomPadding = styled('div')(({ theme }) => ({
+const BottomPadding = styled('div')(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         padding: '10px',
     },
@@ -24,3 +24,13 @@ export const BottomPadding = styled('div')(({ theme }) => ({
         padding: '25px',
     },
 }));
+
+export const TitlePadding = (props) => {
+    return (
+        <>
+            <TopPadding />
+            {props.content}
+            <BottomPadding />
+        </>
+    );
+};
