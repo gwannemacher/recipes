@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
 
 import RecipeGroup from './components/RecipeGroup.tsx';
 import Category from './models/recipe-category.ts';
@@ -14,7 +17,7 @@ const Title = () => {
     const navigate = useNavigate();
 
     return (
-        <Box sx={{ fontSize: '3.5em' }}>
+        <Box sx={{ fontSize: '3.5em', display: 'flex', justifyContent: 'center' }}>
             {isEditMode ? (
                 <Box>
                     recipes
@@ -36,30 +39,49 @@ const Title = () => {
     );
 };
 
+const TopPadding = styled('div')(({ theme }) => ({
+    [theme.breakpoints.down('md')]: {
+        padding: '5px',
+    },
+    [theme.breakpoints.up('md')]: {
+        padding: '10px',
+    },
+    [theme.breakpoints.up('lg')]: {
+        padding: '30px',
+    },
+}));
+
+const BottomPadding = styled('div')(({ theme }) => ({
+    [theme.breakpoints.down('md')]: {
+        padding: '10px',
+    },
+    [theme.breakpoints.up('md')]: {
+        padding: '15px',
+    },
+    [theme.breakpoints.up('lg')]: {
+        padding: '25px',
+    },
+}));
+
 const Home = () => {
     return (
-        <Stack spacing={2} sx={{ textAlign: 'center', marginTop: '75px' }}>
+        <Container maxWidth="sm" sx={{ padding: '25px', flexGrow: 1 }}>
+            <TopPadding />
             <Title />
-            <Stack
-                sx={{
-                    paddingTop: '50px',
-                    justifyContent: 'center',
-                    textAlign: 'left',
-                }}
-                direction="row"
-            >
-                <Stack spacing={1} sx={{ marginRight: '60px' }}>
+            <BottomPadding />
+            <Grid container spacing={2}>
+                <Grid item xs={12} sm={4} sx={{ width: 'fit-content' }}>
                     <RecipeGroup category={Category.BREAKFAST} />
-                </Stack>
-                <Stack spacing={1} sx={{ marginRight: '60px' }}>
+                </Grid>
+                <Grid item xs={12} sm={4} sx={{ width: 'fit-content' }}>
                     <RecipeGroup category={Category.SOUP} />
-                </Stack>
-                <Stack spacing={1} sx={{}}>
+                </Grid>
+                <Grid item xs={12} sm={4} sx={{ width: 'fit-content' }}>
                     <RecipeGroup category={Category.PASTA} />
                     <RecipeGroup category={Category.OTHER} />
-                </Stack>
-            </Stack>
-        </Stack>
+                </Grid>
+            </Grid>
+        </Container>
     );
 };
 

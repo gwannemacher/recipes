@@ -13,6 +13,8 @@ const RecipeLink = (props) => {
             key={props.name}
             sx={{
                 textTransform: 'lowercase',
+                width: 'fit-content',
+                textAlign: 'left',
                 padding: '0px',
                 justifyContent: 'start',
                 fontSize: 'unset',
