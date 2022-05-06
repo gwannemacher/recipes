@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 
 const TopPadding = styled('div')(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
-        padding: '0px',
+        padding: '5px',
     },
     [theme.breakpoints.up('md')]: {
         padding: '10px',

@@ -33,7 +33,7 @@ const GoHomeButton = () => {
                 },
             }}
         >
-            go home
+            home
         </Button>
     );
 };
