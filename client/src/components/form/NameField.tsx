@@ -5,7 +5,6 @@ const NameField = (props) => {
     return (
         <TextField
             fullWidth
-            sx={{ marginBottom: '15px' }}
             id="name"
             name="name"
             label="name"

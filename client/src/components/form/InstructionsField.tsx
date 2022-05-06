@@ -7,7 +7,6 @@ const InstructionsField = (props) => {
             fullWidth
             multiline
             placeholder="enter instructions, separated by a new line"
-            sx={{ marginTop: '15px' }}
             id="instructions"
             name="instructions"
             label="instructions"

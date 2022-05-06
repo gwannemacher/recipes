@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 import NameField from './NameField.tsx';
 import CategoryField from './CategoryField.tsx';
@@ -94,54 +95,65 @@ const FormikForm = (props) => {
 
     return (
         <Container
-            maxWidth="sm"
+            maxWidth="md"
             sx={{ padding: '25px', flexGrow: 1, textTransform: 'lowercase' }}
         >
-            <Stack>
-                <TitlePadding content={<FormTitle />} />
-                <form onSubmit={formik.handleSubmit}>
-                    <NameField
-                        value={formik.values.name}
-                        handleChange={formik.handleChange}
-                        error={
-                            formik.touched.name && Boolean(formik.errors.name)
-                        }
-                        helperText={formik.touched.name && formik.errors.name}
-                    />
-                    <CategoryField
-                        value={formik.values.category}
-                        handleChange={formik.handleChange}
-                    />
-                    <IngredientsField
-                        value={formik.values.ingredients}
-                        handleChange={formik.handleChange}
-                        error={
-                            formik.touched.ingredients &&
-                            Boolean(formik.errors.ingredients)
-                        }
-                        helperText={
-                            formik.touched.ingredients &&
-                            formik.errors.ingredients
-                        }
-                    />
-                    <InstructionsField
-                        value={formik.values.instructions}
-                        handleChange={formik.handleChange}
-                        error={
-                            formik.touched.instructions &&
-                            Boolean(formik.errors.instructions)
-                        }
-                        helperText={
-                            formik.touched.instructions &&
-                            formik.errors.instructions
-                        }
-                    />
-                    <Box sx={{ display: 'flex', justifyContent: 'end' }}>
-                        <SubmitButton />
-                        <CancelButton />
-                    </Box>
-                </form>
-            </Stack>
+            <TitlePadding content={<FormTitle />} />
+            <form onSubmit={formik.handleSubmit}>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} sm={6} sx={{ width: 'fit-content' }}>
+                        <NameField
+                            value={formik.values.name}
+                            handleChange={formik.handleChange}
+                            error={
+                                formik.touched.name &&
+                                Boolean(formik.errors.name)
+                            }
+                            helperText={
+                                formik.touched.name && formik.errors.name
+                            }
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} sx={{ width: 'fit-content' }}>
+                        <CategoryField
+                            value={formik.values.category}
+                            handleChange={formik.handleChange}
+                        />{' '}
+                    </Grid>
+                    <Grid item xs={12} sx={{ width: 'fit-content' }}>
+                        <IngredientsField
+                            value={formik.values.ingredients}
+                            handleChange={formik.handleChange}
+                            error={
+                                formik.touched.ingredients &&
+                                Boolean(formik.errors.ingredients)
+                            }
+                            helperText={
+                                formik.touched.ingredients &&
+                                formik.errors.ingredients
+                            }
+                        />
+                    </Grid>
+                    <Grid item xs={12} sx={{ width: 'fit-content' }}>
+                        <InstructionsField
+                            value={formik.values.instructions}
+                            handleChange={formik.handleChange}
+                            error={
+                                formik.touched.instructions &&
+                                Boolean(formik.errors.instructions)
+                            }
+                            helperText={
+                                formik.touched.instructions &&
+                                formik.errors.instructions
+                            }
+                        />
+                    </Grid>
+                </Grid>
+                <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+                    <SubmitButton />
+                    <CancelButton />
+                </Box>
+            </form>
         </Container>
     );
 };
