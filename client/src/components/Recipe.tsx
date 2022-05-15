@@ -152,8 +152,8 @@ const RecipeName = (props) => {
 const Recipe = (props) => {
     const params = useParams();
 
-    const [loading, allRecipes] = useGetRecipes();
-    const filtered = allRecipes?.filter((x) => x.id === params.recipeId);
+    const { recipes } = useGetRecipes();
+    const filtered = recipes?.filter((x) => x.id === params.recipeId);
     const recipe = filtered?.length > 0 ? filtered[0] : {};
     const recipeName = (
         <RecipeName recipeName={recipe.name} recipeId={recipe.id} />
