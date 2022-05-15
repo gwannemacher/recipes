@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
-import { useFormik } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 
 import Box from '@mui/material/Box';
@@ -39,59 +39,20 @@ const FormTitle = (props) => {
     );
 };
 
+const validationSchema = yup.object({
+    name: yup.string('enter recipe name').required('recipe name is required'),
+    ingredients: yup
+        .string('enter ingredients list')
+        .required('ingredient list is required'),
+    instructions: yup
+        .string('enter instructions list')
+        .required('instructions list is required'),
+});
+
 const FormikForm = (props) => {
     const navigate = useNavigate();
     const [addRecipe] = useAddRecipe();
     const [updateRecipe] = useUpdateRecipe();
-
-    const validationSchema = yup.object({
-        name: yup
-            .string('enter recipe name')
-            .required('recipe name is required'),
-        ingredients: yup
-            .string('enter ingredients list')
-            .required('ingredient list is required'),
-        instructions: yup
-            .string('enter instructions list')
-            .required('instructions list is required'),
-    });
-
-    const formik = useFormik({
-        initialValues: {
-            name: props.recipe?.name ?? '',
-            category: props.recipe?.category ?? Category.BREAKFAST,
-            ingredients: props.recipe
-                ? props.recipe.ingredients.reduce((p, c) => p + c + '\n', '')
-                : '',
-            instructions: props.recipe
-                ? props.recipe.instructions.reduce((p, c) => p + c + '\n', '')
-                : '',
-        },
-        validationSchema: validationSchema,
-        onSubmit: (values) => {
-            if (props.recipe) {
-                updateRecipe({
-                    variables: {
-                        id: props.recipe.id,
-                        name: values.name,
-                        category: values.category,
-                        ingredients: values.ingredients,
-                        instructions: values.instructions,
-                    },
-                });
-            } else {
-                addRecipe({
-                    variables: {
-                        name: values.name,
-                        category: values.category,
-                        ingredients: values.ingredients,
-                        instructions: values.instructions,
-                    },
-                });
-            }
-            navigate('/');
-        },
-    });
 
     return (
         <Container
@@ -99,61 +60,116 @@ const FormikForm = (props) => {
             sx={{ padding: '25px', flexGrow: 1, textTransform: 'lowercase' }}
         >
             <TitlePadding content={<FormTitle />} />
-            <form onSubmit={formik.handleSubmit}>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} sx={{ width: 'fit-content' }}>
-                        <NameField
-                            value={formik.values.name}
-                            handleChange={formik.handleChange}
-                            error={
-                                formik.touched.name &&
-                                Boolean(formik.errors.name)
-                            }
-                            helperText={
-                                formik.touched.name && formik.errors.name
-                            }
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6} sx={{ width: 'fit-content' }}>
-                        <CategoryField
-                            value={formik.values.category}
-                            handleChange={formik.handleChange}
-                        />{' '}
-                    </Grid>
-                    <Grid item xs={12} sx={{ width: 'fit-content' }}>
-                        <IngredientsField
-                            value={formik.values.ingredients}
-                            handleChange={formik.handleChange}
-                            error={
-                                formik.touched.ingredients &&
-                                Boolean(formik.errors.ingredients)
-                            }
-                            helperText={
-                                formik.touched.ingredients &&
-                                formik.errors.ingredients
-                            }
-                        />
-                    </Grid>
-                    <Grid item xs={12} sx={{ width: 'fit-content' }}>
-                        <InstructionsField
-                            value={formik.values.instructions}
-                            handleChange={formik.handleChange}
-                            error={
-                                formik.touched.instructions &&
-                                Boolean(formik.errors.instructions)
-                            }
-                            helperText={
-                                formik.touched.instructions &&
-                                formik.errors.instructions
-                            }
-                        />
-                    </Grid>
-                </Grid>
-                <Box sx={{ display: 'flex', justifyContent: 'end' }}>
-                    <SubmitButton />
-                    <CancelButton />
-                </Box>
-            </form>
+            <Formik
+                initialValues={{
+                    name: props.recipe?.name ?? '',
+                    category: props.recipe?.category ?? Category.BREAKFAST,
+                    ingredients: props.recipe
+                        ? props.recipe.ingredients.reduce(
+                              (p, c) => p + c + '\n',
+                              ''
+                          )
+                        : '',
+                    instructions: props.recipe
+                        ? props.recipe.instructions.reduce(
+                              (p, c) => p + c + '\n',
+                              ''
+                          )
+                        : '',
+                }}
+                validationSchema={validationSchema}
+                onSubmit={(values) => {
+                    if (props.recipe) {
+                        updateRecipe({
+                            variables: {
+                                id: props.recipe.id,
+                                name: values.name,
+                                category: values.category,
+                                ingredients: values.ingredients,
+                                instructions: values.instructions,
+                            },
+                        });
+                    } else {
+                        addRecipe({
+                            variables: {
+                                name: values.name,
+                                category: values.category,
+                                ingredients: values.ingredients,
+                                instructions: values.instructions,
+                            },
+                        });
+                    }
+                    navigate('/');
+                }}
+            >
+                {(props) => (
+                    <form onSubmit={props.handleSubmit}>
+                        <Grid container spacing={2}>
+                            <Grid
+                                item
+                                xs={12}
+                                sm={6}
+                                sx={{ width: 'fit-content' }}
+                            >
+                                <NameField
+                                    value={props.values.name}
+                                    handleChange={props.handleChange}
+                                    error={
+                                        props.touched.name &&
+                                        Boolean(props.errors.name)
+                                    }
+                                    helperText={
+                                        props.touched.name && props.errors.name
+                                    }
+                                />
+                            </Grid>
+                            <Grid
+                                item
+                                xs={12}
+                                sm={6}
+                                sx={{ width: 'fit-content' }}
+                            >
+                                <CategoryField
+                                    value={props.values.category}
+                                    handleChange={props.handleChange}
+                                />{' '}
+                            </Grid>
+                            <Grid item xs={12} sx={{ width: 'fit-content' }}>
+                                <IngredientsField
+                                    value={props.values.ingredients}
+                                    handleChange={props.handleChange}
+                                    error={
+                                        props.touched.ingredients &&
+                                        Boolean(props.errors.ingredients)
+                                    }
+                                    helperText={
+                                        props.touched.ingredients &&
+                                        props.errors.ingredients
+                                    }
+                                />
+                            </Grid>
+                            <Grid item xs={12} sx={{ width: 'fit-content' }}>
+                                <InstructionsField
+                                    value={props.values.instructions}
+                                    handleChange={props.handleChange}
+                                    error={
+                                        props.touched.instructions &&
+                                        Boolean(props.errors.instructions)
+                                    }
+                                    helperText={
+                                        props.touched.instructions &&
+                                        props.errors.instructions
+                                    }
+                                />
+                            </Grid>
+                        </Grid>
+                        <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+                            <SubmitButton />
+                            <CancelButton />
+                        </Box>
+                    </form>
+                )}
+            </Formik>
         </Container>
     );
 };
@@ -177,6 +193,7 @@ const RecipeForm = (props) => {
     const recipeId = searchParams.get('recipe');
 
     const { recipes } = useGetRecipes();
+
     const filtered = recipes?.filter((x) => x.id === recipeId);
     const recipe = filtered?.length > 0 ? filtered[0] : null;
 
