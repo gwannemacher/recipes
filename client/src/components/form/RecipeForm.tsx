@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import { useFormik } from 'formik';
@@ -158,29 +158,33 @@ const FormikForm = (props) => {
     );
 };
 
+const RecipeLoading = () => {
+    return (
+        <Container
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginTop: '350px',
+            }}
+        >
+            <CircularProgress />
+        </Container>
+    );
+};
+
 const RecipeForm = (props) => {
     const [searchParams] = useSearchParams();
     const recipeId = searchParams.get('recipe');
 
-    const [loading, allRecipes] = useGetRecipes();
-    const filtered = allRecipes?.filter((x) => x.id === recipeId);
+    const { recipes } = useGetRecipes();
+    const filtered = recipes?.filter((x) => x.id === recipeId);
     const recipe = filtered?.length > 0 ? filtered[0] : null;
 
-    if (recipeId && (loading || !recipe)) {
-        return (
-            <Container
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    marginTop: '350px',
-                }}
-            >
-                <CircularProgress />
-            </Container>
-        );
-    } else {
-        return <FormikForm recipe={recipe} />;
-    }
+    return (
+        <Suspense fallback={<RecipeLoading />}>
+            <FormikForm recipe={recipe} />
+        </Suspense>
+    );
 };
 
 export default RecipeForm;
