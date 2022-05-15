@@ -22,6 +22,20 @@ import useUpdateRecipe from '../../hooks/useUpdateRecipe.ts';
 import useGetRecipes from '../../hooks/useGetRecipes.ts';
 import { TitlePadding } from '../../layout/TitlePadding.tsx';
 
+const RecipeLoading = () => {
+    return (
+        <Container
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginTop: '350px',
+            }}
+        >
+            <CircularProgress />
+        </Container>
+    );
+};
+
 const FormTitle = (props) => {
     const [searchParams] = useSearchParams();
     const recipeId = searchParams.get('recipe');
@@ -170,20 +184,6 @@ const FormikForm = (props) => {
                     </form>
                 )}
             </Formik>
-        </Container>
-    );
-};
-
-const RecipeLoading = () => {
-    return (
-        <Container
-            sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                marginTop: '350px',
-            }}
-        >
-            <CircularProgress />
         </Container>
     );
 };
