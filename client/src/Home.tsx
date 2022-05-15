@@ -47,7 +47,9 @@ const Title = () => {
 const Home = () => {
     return (
         <Container maxWidth="sm" sx={{ padding: '25px', flexGrow: 1 }}>
-            <TitlePadding content={<Title />} />
+            <TitlePadding>
+                <Title />
+            </TitlePadding>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={4} sx={{ width: 'fit-content' }}>
                     <RecipeGroup category={Category.BREAKFAST} />

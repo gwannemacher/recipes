@@ -29,7 +29,7 @@ export const TitlePadding = (props) => {
     return (
         <>
             <TopPadding />
-            {props.content}
+            {props.children}
             <BottomPadding />
         </>
     );

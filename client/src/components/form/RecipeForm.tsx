@@ -73,7 +73,9 @@ const FormikForm = (props) => {
             maxWidth="md"
             sx={{ padding: '25px', flexGrow: 1, textTransform: 'lowercase' }}
         >
-            <TitlePadding content={<FormTitle />} />
+            <TitlePadding>
+                <FormTitle />
+            </TitlePadding>
             <Formik
                 initialValues={{
                     name: props.recipe?.name ?? '',

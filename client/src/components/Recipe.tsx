@@ -155,9 +155,6 @@ const Recipe = (props) => {
     const { recipes } = useGetRecipes();
     const filtered = recipes?.filter((x) => x.id === params.recipeId);
     const recipe = filtered?.length > 0 ? filtered[0] : {};
-    const recipeName = (
-        <RecipeName recipeName={recipe.name} recipeId={recipe.id} />
-    );
 
     return (
         <>
@@ -171,7 +168,12 @@ const Recipe = (props) => {
                     }}
                 >
                     <Stack sx={{ width: '750px', paddingBottom: '100px' }}>
-                        <TitlePadding content={recipeName} />
+                        <TitlePadding>
+                            <RecipeName
+                                recipeName={recipe.name}
+                                recipeId={recipe.id}
+                            />
+                        </TitlePadding>
                         <Ingredients ingredients={recipe.ingredients} />
                         <Instructions instructions={recipe.instructions} />
                     </Stack>
