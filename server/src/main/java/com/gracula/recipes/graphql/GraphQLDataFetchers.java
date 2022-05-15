@@ -1,6 +1,5 @@
 package com.gracula.recipes.graphql;
 
-import com.google.common.collect.ImmutableList;
 import com.gracula.recipes.data.MongoDbClient;
 import com.gracula.recipes.models.Recipe;
 import com.mongodb.client.model.Updates;
@@ -75,6 +74,14 @@ public class GraphQLDataFetchers {
                     eq("_id", id)).first();
 
             return recipe;
+        };
+    }
+
+    public DataFetcher<String> deleteRecipe() {
+        return env -> {
+            final String id = env.getArgument("id");
+            mongoClient.recipeCollection.deleteOne(eq("_id", id));
+            return id;
         };
     }
 

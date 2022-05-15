@@ -148,7 +148,7 @@ const FormikForm = (props) => {
                                 <CategoryField
                                     value={props.values.category}
                                     handleChange={props.handleChange}
-                                />{' '}
+                                />
                             </Grid>
                             <Grid item xs={12} sx={{ width: 'fit-content' }}>
                                 <IngredientsField
@@ -195,7 +195,6 @@ const RecipeForm = (props) => {
     const recipeId = searchParams.get('recipe');
 
     const { recipes } = useGetRecipes();
-
     const filtered = recipes?.filter((x) => x.id === recipeId);
     const recipe = filtered?.length > 0 ? filtered[0] : null;
 
