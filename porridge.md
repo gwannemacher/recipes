@@ -1,6 +1,8 @@
-# Chicken Tortilla Soup
+# Porridge
 
 ## Ingredients
+
+### High heat
 
 - [ ] ⅔ cup steel cut oats
 - [ ] ⅔ cup unsweetened almond milk
@@ -8,6 +10,9 @@
 - [ ] pinch ground ginger
 - [ ] pinch ground cinnamon
 - [ ] pinch ground nutmeg
+
+### To add after heat
+
 - [ ] 2 tablespoons hemp seeds
 - [ ] 1 tablespoons almond butter
 - [ ] 2 teaspoons chia seeds

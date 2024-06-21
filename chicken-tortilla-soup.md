@@ -2,7 +2,6 @@
 
 ## Ingredients
 
-- [ ] 2 teaspoons cooking oil
 - [ ] 1 cup onion, chopped (about 1 small)
 - [ ] 2 cups celery, sliced (about 4 medium stalks)
 - [ ] 4 garlic cloves, minced
@@ -22,8 +21,7 @@
 
 ## Directions
 
-- [ ] Heat oil in large saucepan over medium-high heat
-- [ ] Add chopped onion and celery; cook, stirring frequently, for about 5 minutes and until veggies are soft
+- [ ] Saute chopped onion and celery, stirring frequently, for about 5 minutes until soft
 - [ ] Add garlic; cook, stirring frequently, for about 1 minute
 - [ ] Add tomatoes; cook, stirring frequently, for about 5 minutes and until tomatoes are soft
 - [ ] Set aside
