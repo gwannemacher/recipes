@@ -10,11 +10,11 @@
 - [ ] 2 Tbsp lemon juice
 - [ ] 3 Tbsp fish sauce
 - [ ] 1 Tbsp sugar
-- [ ] 4 oz onions (cooked)
+- [ ] 4 oz onions (already cooked)
 - [ ] 8 oz baby potatoes, halved
 - [ ] 1 cup unsalted roasted peanuts, roughly chopped
-- [ ] 4 oz fine green beans, halved
 - [ ] 1 red bell pepper, seeded and thinly sliced
+- [ ] 1 green bell pepper, seeded and thinly sliced
 
 ## Directions
 
