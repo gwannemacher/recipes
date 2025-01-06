@@ -1,4 +1,4 @@
-# Seared curry
+# Seared tofu
 
 This recipe is adapted from https://steamykitchen.com/23559-chinese-braised-tofu-with-ground-pork-recipe.html
 
