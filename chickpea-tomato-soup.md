@@ -1,33 +1,29 @@
-# Sausage Orzo Soup
+# Chickpea & Roasted Tomato Soup
+
+This recipe is taken from the book Soup of the Day by Kate McMillan.
 
 ## Ingredients
 
-- [ ] ½ Onion
-- [ ] 1 tbsp Garlic
-- [ ] 500 grams Italian Sausage
-- [ ] 4 cups Chicken Broth
-- [ ] 1 28 Oz Crushed Tomato
-- [ ] 2 tsp Italian Seasoning
-- [ ] ½ tsp red chili Flakes (optional)
-- [ ] salt and pepper to taste
-- [ ] 1 cup Orzo Pasta
-
-### After high heat
-
-- [ ] 2 cups Spinach (tightly packed)
-- [ ] ¼ cup Half and Half
-- [ ] ½ cup Parmesan Cheese (to serve)
+- [ ] 1lb tomatoes
+- [ ] 2 Tbsp olive oil
+- [ ] Salt & pepper
+- [ ] 1 large yellow onion, chopped
+- [ ] 4 cloves garlic, minced
+- [ ] 1 tsp ground cumin
+- [ ] 1/2 tsp paprika
+- [ ] 1 cinnamon stick
+- [ ] 3 cans chickpeas, drained
+- [ ] 4 cups chicken broth
+- [ ] 1 Tbsp sour cream (original recipe, but I prefer greek yogurt)
 
 ## Directions
 
-- [ ] Saute onion and garlic until the onion has softened and raw garlic smell is gone
-- [ ] Roughly break sausages to small chunks and add to the pan
-- [ ] Saute for 5-6 minutes until they are browned and aromatic
-- [ ] Deglaze the pot by adding stocks and scarp the bottom of the pan to remove any brown bits
-- [ ] Stir in the tomatoes, Italian seasoning, chili flakes, salt and pepper
-- [ ] When the stock comes to a boil stir in Orzo Pasta
-- [ ] Cover and let it cook for 8-10 minutes in the medium-low heat until Orzo is almost cooked
-- [ ] Stir frequently to prevent Orzo from getting stuck at the bottom
-- [ ] Stir in spinach to the pot and let it cook for 2 minutes
-- [ ] Switch off the flame and stir in half and half
-- [ ] Serve with a generous topping of parmesan cheese
+- [ ] Preheat oven to 450F
+- [ ] Slice the tomatoes in half and place on baking sheet. Drizzle with the olive oil and season with salt & pepper
+- [ ] Roast until tomatoes are soft and caramelized, 25-30 minutes. Set aside
+- [ ] In a large heavy pot, saute onion and garlic until soft, about 5 minutes
+- [ ] Add cumin, paprika, and cinnamon stick and toast the spices, stirring often, for 2 minutes
+- [ ] Add chickpeas, roasted tomatoes, and broth, stir to combine, and bring to a boil
+- [ ] Reduce the heat to low and simmer until the chickpeas are very tender, about 45 minutes. Remove from heat and let cool slightly
+- [ ] Transfer about two-thirds of the soup to a blender and puree.
+- [ ] Return to pot and stir in yogurt
