@@ -24,7 +24,7 @@ This recipe is taken from the book The Best Mexican Recipes by America's Test Ki
 - [ ] Transfer beef to large bowl and let cool slightly. Using 2 forks, shred into bite-size pieces; refrigerate for 20 minutes. Strain sauce through fine-mesh strainer, discarding solids. Combine chilled beef, 1 cup cheddar, and 1/4 cup reserved sauce in a bowl.
 - [ ] Adjust oven rack to middle position and increase oven temperature to 450 degrees. Spread 3/4 cup sauce over bottom of 13 by 9-inch baking dish. Brush both sides of tortillas with remaining 2 Tbsp oil. Stack tortillas, wrap in damp dish towel, and placeon plate; microwave until warm and pliable, about 1 minute.
 - [ ] Working with 1 warm tortilla at a time, spread 1/3 cup beef filling across center of tortilla. Roll tortilla tightly around filling and place seam side down in baking dish
-- [ ] Pour remaining sauce over top to cover completely and sprinkle remaining 1 cup cheddar over enchiladas. Cover dish tightly with greased aluminum foil. Bake until enchiladas are heated through and cheese is melted, 15 to 20 minutes. Let cool for 5 minutes and serve.
+- [ ] Pour remaining sauce over top to cover completely and sprinkle remaining 1 cup cheddar over enchiladas. Cover dish tightly with greased aluminum foil. Bake until enchiladas are heated through and cheese is melted, 15 to 20 minutes. Let cool for 5 minutes and serve with sour cream, diced avocado (or guac), minced cilantro, shredded romaine lettuce, and lime wedges.
 
 ## Preparing ahead of time
 
