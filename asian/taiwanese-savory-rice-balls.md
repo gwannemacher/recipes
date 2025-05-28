@@ -38,7 +38,7 @@ This recipe is taken from the book Tiffy Cooks by Tiffy Chen.
 
 ## Directions
 
-- [ ] **Make the doug:** In a large bowl, mix together the rice flour and sugar. Pour in the hot water and mix with a pair of chopsticks until combined. Slowly pour in the cold water and mix again with the chopsticks. Once the dough is cool enough to handle, use your hands to knead it into a rough ball. Cover the bowl with a kitchen towel and let the dough rest for 15 minutes.
+- [ ] **Make the dough:** In a large bowl, mix together the rice flour and sugar. Pour in the hot water and mix with a pair of chopsticks until combined. Slowly pour in the cold water and mix again with the chopsticks. Once the dough is cool enough to handle, use your hands to knead it into a rough ball. Cover the bowl with a kitchen towel and let the dough rest for 15 minutes.
 - [ ] **Meanwhile, make the filling:** Soak the dried shrimp (if using) in a small bowl of water for 10 minutes. Drain, pat dry, and finely chop.
 - [ ] In a large bowl, combine the dried shrimp, ground pork, mushrooms, fried shallots, scallions, light soy sauce, oyster sauce, dashi powder, and white pepper. Mix well.
 - [ ] **Shape the rice balls:** Tip the dough onto a floured work surface. Roll out the dough into a long 15-inch log about 1 inch thick with your hands. Cut into fifteen equal pieces. Cover the dough with a damp kitchen towel.
