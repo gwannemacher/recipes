@@ -19,11 +19,11 @@ This recipe is taken from the site https://omnivorescookbook.com/rice-cake-stir-
 
 ### Stir Fry
 - [ ] 12 oz baby bok choy, cut to bite-size pieces
-- [ ] 2 eggs, beaten
+- [ ] 3 eggs, beaten
 - [ ] 2 tablespoons peanut oil
 - [ ] 2 green onions, sliced
 - [ ] 1 tablespoon ginger, minced
-- [ ] 4 cups rice cake, sliced (pre-soak if using dried)
+- [ ] 4 cups rice cake, sliced (pre-soak if using dried) (my note: honestly, I like the rod-shaped ones better for this)
 - [ ] 1/2 cup chicken broth
 
 ## Instructions
