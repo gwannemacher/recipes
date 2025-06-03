@@ -16,7 +16,7 @@ This recipe is taken from the book Tiffy Cooks by Tiffy Chen.
 - [ ] 1 tablespoon sesame oil
 - [ ] 1 tablespoon dashi powder
 - [ ] 1 tablespoon ground white pepper
-- [ ] 1 teaspoon salt
+- [ ] 1/2 teaspoon salt
 - [ ] 1 cup dashi stock, for serving (optional)
 
 ## Directions
