@@ -6,14 +6,17 @@ This recipe is taken from the book Tiffy Cooks by Tiffy Chen.
 
 ### Dough
 
+#### Combined
 - [ ] 2 cups / 200g glutinous rice flour
 - [ ] 2 tablespoons sugar
+
+#### Added later
 - [ ] 1/4 cup hot water
 - [ ] 1/3 cup cold water
 
-### Filling
+### Filling (all combined)
 
-- [ ] 1 tablespoon dried shrimp (optional)
+- [ ] 1 tablespoon dried shrimp (soaked for 10 min, drained, patted dry, finely chopped)
 - [ ] 7 ounces / 200g ground pork
 - [ ] 1 cup finely chopped shiitake mushrooms
 - [ ] 1 tablespoon fried shallots
@@ -25,9 +28,12 @@ This recipe is taken from the book Tiffy Cooks by Tiffy Chen.
 
 ### Broth
 
+#### Combined
 - [ ] 2 cups chicken stock or vegetable stock
 - [ ] 1 tablespoon light soy sauce
 - [ ] 1 (2-inch) piece fresh ginger, peeled and sliced lengthwise into 3 pieces
+
+#### Added later
 - [ ] 1 tablespoon fried shallots
 - [ ] 1 teaspoon ground white pepper
 
@@ -39,8 +45,7 @@ This recipe is taken from the book Tiffy Cooks by Tiffy Chen.
 ## Directions
 
 - [ ] **Make the dough:** In a large bowl, mix together the rice flour and sugar. Pour in the hot water and mix with a pair of chopsticks until combined. Slowly pour in the cold water and mix again with the chopsticks. Once the dough is cool enough to handle, use your hands to knead it into a rough ball. Cover the bowl with a kitchen towel and let the dough rest for 15 minutes.
-- [ ] **Meanwhile, make the filling:** Soak the dried shrimp (if using) in a small bowl of water for 10 minutes. Drain, pat dry, and finely chop.
-- [ ] In a large bowl, combine the dried shrimp, ground pork, mushrooms, fried shallots, scallions, light soy sauce, oyster sauce, dashi powder, and white pepper. Mix well.
+- [ ] **Meanwhile, make the filling:** In a large bowl, combine the shrimp, ground pork, mushrooms, fried shallots, scallions, light soy sauce, oyster sauce, dashi powder, and white pepper. Mix well.
 - [ ] **Shape the rice balls:** Tip the dough onto a floured work surface. Roll out the dough into a long 15-inch log about 1 inch thick with your hands. Cut into fifteen equal pieces. Cover the dough with a damp kitchen towel.
 - [ ] Take one piece of dough, leaving the rest covered with the towel. Roll the dough into a ball with the palm of your hand, then use your thumb to make a dent in the center. Place 1 tablespoon of the filling in the dent. Push the filling down with your thumb whilte gently pinching the top closed. Using your palms again, roll the dough into a smooth ball, making sure the filling is fully enclosed. Repeat with the remaining dough and filling.
 - [ ] **Cook the rice balls:** Bring a large pot of water to a boil over high heat. Working in batches, add the rice balls and cook for 10 minutes, or until they start to float. Once all the rice balls are floating, cook for another 2 minutes. Drain the rice balls and transfer to a large bowl. Repeat with the remaining rice balls. Wipe the pot.
