@@ -6,18 +6,10 @@ This recipe is taken from the book The Best Mexican Recipes by America's Test Ki
 
 - [ ] 1/4 cup vegetable oil
 - [ ] 1 onion, chopped fine
-- [ ] 3 tablespoons chili powder
-- [ ] 3 garlic cloves, minced
-- [ ] 2 teaspoons ground coriander
-- [ ] 2 teaspoons ground cumin
-- [ ] 2 teaspoons sugar
-- [ ] 1/2 teaspoon salt
+- [ ] 3 tablespoons chili powder, 3 garlic cloves (minced), 2 teaspoons ground coriander, 2 teaspoons ground cumin, 2 teaspoons sugar, 1/2 teaspoon salt
 - [ ] 1 pound boneless, skinless chicken thighs, trimmed and cut into 1/4-inch-wide strips
-- [ ] 2 (8-oz) cans tomato sauce
-- [ ] 1 cup water
-- [ ] 1/2 cup chopped fresh cilantro
-- [ ] 1/4 cup jarred jalapenos, chopped
-- [ ] 12 ounces sharp cheddar cheese, shredded (3 cups)
+- [ ] 2 (8-oz) cans tomato sauce, 1 cup water
+- [ ] 1/2 cup chopped fresh cilantro, 1/4 cup jarred jalapenos (chopped), 12 ounces sharp cheddar cheese (shredded, 2 1/2 cups + 1/2 cup)
 - [ ] 12 (6-inch) corn tortillas
 
 ## Directions
