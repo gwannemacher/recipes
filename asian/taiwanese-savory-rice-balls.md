@@ -6,14 +6,9 @@ This recipe is taken from the book Tiffy Cooks by Tiffy Chen.
 
 ### Dough
 
-#### Combined
-- [ ] 2 cups / 200g glutinous rice flour
-- [ ] 1 tablespoon + 1 teaspoon sugar
-
-#### Added later
+- [ ] 2 cups / 200g glutinous rice flour, 1 tablespoon + 1 teaspoon sugar
 - [ ] 1/4 cup boiling water
-- [ ] 1/3 cup cold water
-- **note**: i needed more water when making this. add just enough so it can form a shape without falling apart
+- [ ] 1/3 cup cold water (may need more)
 
 ### Filling (all combined)
 
@@ -29,12 +24,7 @@ This recipe is taken from the book Tiffy Cooks by Tiffy Chen.
 
 ### Broth
 
-#### Combined
-- [ ] 2 cups chicken stock or vegetable stock
-- [ ] 1 tablespoon light soy sauce
-- [ ] 1 (2-inch) piece fresh ginger, peeled and sliced lengthwise into 3 pieces
-
-#### Added later
+- [ ] 2 cups chicken stock or vegetable stock, 1 tablespoon light soy sauce, 1 (2-inch) piece fresh ginger (peeled and sliced lengthwise into 3 pieces)
 - [ ] 1 tablespoon fried shallots
 - [ ] 1 teaspoon ground white pepper
 
