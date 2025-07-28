@@ -36,4 +36,4 @@ This recipe is taken from the site https://omnivorescookbook.com/rice-cake-stir-
 - [ ] Add the remaining 1/2 tablespoon and the rice cake. Stir a few times and spread the rice cake into one layer. Pour in the chicken broth. Cook over low heat for 1 minute. Uncover and add the baby bok choy. Cover and cook for another minute, until the rice cake just turned tender and the bok choy is not quite cooked.
 - [ ] Add the green onion and ginger. Give it a quick stir.
 - [ ] Pour in the sauce. Stir and cook for 1 minute.
-[ ] Add back the cooked chicken and eggs. Cook and stir until the sauce is absorbed. Serve hot as a main dish.
+- [ ] Add back the cooked chicken and eggs. Cook and stir until the sauce is absorbed. Serve hot as a main dish.
