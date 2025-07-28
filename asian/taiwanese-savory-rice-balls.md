@@ -6,7 +6,7 @@ This recipe is taken from the book Tiffy Cooks by Tiffy Chen.
 
 ### Dough
 
-- [ ] 2 cups / 200g glutinous rice flour, 1 tablespoon + 1 teaspoon sugar
+- [ ] 2 cups / 200g glutinous rice flour, 1 tablespoon sugar
 - [ ] 1/4 cup boiling water
 - [ ] 1/3 cup cold water (may need more)
 
@@ -24,7 +24,7 @@ This recipe is taken from the book Tiffy Cooks by Tiffy Chen.
 
 ### Broth
 
-- [ ] 2 cups chicken stock or vegetable stock, 1 tablespoon light soy sauce, 1 (2-inch) piece fresh ginger (peeled and sliced lengthwise into 3 pieces)
+- [ ] 2 cups chicken stock, 1 tablespoon light soy sauce, 1 (2-inch) piece fresh ginger (peeled and sliced lengthwise into 3 pieces)
 - [ ] 1 tablespoon fried shallots
 - [ ] 1 teaspoon ground white pepper
 
@@ -37,7 +37,7 @@ This recipe is taken from the book Tiffy Cooks by Tiffy Chen.
 
 - [ ] **Make the dough:** In a large bowl, mix together the rice flour and sugar. Pour in the hot water and mix with a pair of chopsticks until combined. Slowly pour in the cold water and mix again with the chopsticks. Once the dough is cool enough to handle, use your hands to knead it into a rough ball. Cover the bowl with a kitchen towel and let the dough rest for 15 minutes.
 - [ ] **Meanwhile, make the filling:** In a large bowl, combine the shrimp, ground pork, mushrooms, fried shallots, scallions, light soy sauce, oyster sauce, dashi powder, and white pepper. Mix well.
-- [ ] **Shape the rice balls:** Tip the dough onto a floured work surface. Roll out the dough into a long 15-inch log about 1 inch thick with your hands. Cut into fifteen (**edit**: try for smaller balls next time, maybe 22) equal pieces. Cover the dough with a damp kitchen towel.
+- [ ] **Shape the rice balls:** Tip the dough onto a floured work surface. Roll out the dough into a long 15-inch log about 1 inch thick with your hands. Cut into 22 equal pieces. Cover the dough with a damp kitchen towel.
 - [ ] Take one piece of dough, leaving the rest covered with the towel. Roll the dough into a ball with the palm of your hand, then use your thumb to make a dent in the center. Place 1 tablespoon (**edit**: maybe 1 heaping teaspoon?) of the filling in the dent. Push the filling down with your thumb whilte gently pinching the top closed. Using your palms again, roll the dough into a smooth ball, making sure the filling is fully enclosed. Repeat with the remaining dough and filling.
 - [ ] **Cook the rice balls:** Bring a large pot of water to a boil over high heat. Working in batches, add the rice balls and cook for 10 minutes, or until they start to float. Once all the rice balls are floating, cook for another 2 minutes. Drain the rice balls and transfer to a large bowl. Repeat with the remaining rice balls. Wipe the pot.
 - [ ] **Make the broth and finish:** In the same pot, combine the chicken stock, light soy sauce, and ginger. Bring to a simmer over medium-high heat. Once the broth is simmering, add the fried shallots and white pepper. Simmer for another 1 to 2 minutes, until fragrant. Pour the broth over the rice balls. Garnish with the cilantro and chopped scallion greens.
