@@ -17,7 +17,7 @@ Taken from the book *Ottolenghi Test Kitchen*
 - [ ] 2 (15-oz) cans fava beans, drained and skins removed
 - [ ] 2/3 cup water
 - [ ] 3 Tbsp unsalted butter
-- [ ] 2 onions, pelled and finely chopped
+- [ ] 2 onions, peeled and finely chopped
 - [ ] Salt and black pepper
 
 ### Green chile sauce
@@ -33,5 +33,5 @@ Taken from the book *Ottolenghi Test Kitchen*
 
 ### Ful mudammas
 - [ ] Meanwhile, put 4 tablespoons of the oil in large saute pan on medium-high heat. Once hot, add the garlic and ginger and cook for 90 seconds, until starting to color. Add the tomato paste and spices and cook for 1 minute more, then stir in the tomatoes, cilantro, 1/4 teaspoon of salt, and a good grind of pepper and cook, stirring occasionally, for 5 minutes, or until the tomatoes have broken down. Add the fava beans and water, bring to a simmer, then turn the heat down to medium and cook for 8-10 minutes, until the liquid has reduced by half and the beans are very soft. Remove from the heat and use a fork to roughly mash the mixture into a very coarse mash. Add a splash more water if the mixture is too thick (it should be a bit loose).
-- [ ] While the base is cooking, prepare the onions. Put the remaining 1 tablespoon of oil and 1 tablespoon of butter into a medium saute panon medium-high heat. Once hot, add the onions and 1/2 teaspoon of salt and cook for 12-15 minutes, stirring occasionally, until nicely browned. Add the remaining butter and cook for another 5 minutes, or until melted and slightly nutty.
-- [ ] Transfer the ful mudammas toa large shallow bowl, using a spoon to create a few small wells in the center. Spoon in the buttery onions and top with half the green chile sauce, serving the rest alongside. Serve warm.
+- [ ] While the base is cooking, prepare the onions. Put the remaining 1 tablespoon of oil and 1 tablespoon of butter into a medium saute pan on medium-high heat. Once hot, add the onions and 1/2 teaspoon of salt and cook for 12-15 minutes, stirring occasionally, until nicely browned. Add the remaining butter and cook for another 5 minutes, or until melted and slightly nutty.
+- [ ] Transfer the ful mudammas to a large shallow bowl, using a spoon to create a few small wells in the center. Spoon in the buttery onions and top with half the green chile sauce, serving the rest alongside. Serve warm.
