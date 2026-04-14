@@ -8,6 +8,7 @@ This recipe is taken from the book Home-Style Taiwanese Cooking by Liv Wan.
 - [ ] 200 g (7 oz) minced pork
 - [ ] 30 g (1 oz) spring onions, finely chopped
 - [ ] 600 g (1 lb 5 1/3 oz) firm tofu
+- [ ] Small can water chestnuts, diced
 
 ### Seasoning
 
@@ -26,7 +27,7 @@ This recipe is taken from the book Home-Style Taiwanese Cooking by Liv Wan.
 
 ## Directions
 
-- [ ] Squeeze any excess water from the mushrooms and chop finely. Mix with the minced pork, spring onions and seasoning. Set aside to marinate for 15-20 minutes
+- [ ] Squeeze any excess water from the mushrooms and chop finely. Mix with the minced pork, spring onions, water chestnuts, and seasoning. Set aside to marinate for 15-20 minutes
 - [ ] Slice the tofu into squares, each about 1.5-cm (3/4-in) thick
 - [ ] Using a teaspoon, make a well in the middle of each tofu square and fill with the mushroom and pork mixture
 - [ ] Place the stuffed tofu on a steaming plate and steam for 20-30 minutes over high heat
