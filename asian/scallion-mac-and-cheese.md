@@ -39,4 +39,4 @@ To the same skillet that was used to fry the scallions and garlic, add the panko
 Bring a large pot of salted water to a boil. Add the macaroni to the pot and cook until just al dente, according to the package instructions. Drain the macaroni, then return it to the pot.
 
 ### Assemble the macaroni:
-Add the blended cashew cheese to the pot of macaroni and stir to combine. Turn the heat to medium and cook for a couple minutes, stirring occasionally, to warm everything up. Divide the Mac and cheese among four serving bowls and top with a sprinkling of toasted panko and chopped scallions. Serve immediately.until the rice has softened and the meat is cooked through, and serve.
+Add the blended cashew cheese to the pot of macaroni and stir to combine. Turn the heat to medium and cook for a couple minutes, stirring occasionally, to warm everything up. Divide the Mac and cheese among four serving bowls and top with a sprinkling of toasted panko and chopped scallions. Serve immediately.
